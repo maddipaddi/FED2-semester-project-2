@@ -82,6 +82,7 @@ Open the development server in your browser at the provided local host port link
 ```
 
 5. **Preview the Build**
+   To preview the production build locally:
 
 ```bash
    npm run preview
