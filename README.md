@@ -55,20 +55,37 @@ To run the project locally, you’ll need:
 ### Installation and Setup
 
 1. **Clone the Repository**
-   ```bash
+
+```bash
    git clone https://github.com/your-username/fed2-semester-project-2.git
-   cd fed2-semester-project-2
-   ```
+```
+
 2. **Install Dependencies**
+
+```bash
    npm install
+```
+
 3. **Run the Development Server**
+
+```bash
    npm run dev
-   Open the development server in your browser at the provided local host link.
+```
+
+Open the development server in your browser at the provided local host port link.
+
 4. **Build for Production**
    To create an optimized production build:
+
+```bash
    npm run build
+```
+
 5. **Preview the Build**
+
+```bash
    npm run preview
+```
 
 ---
 
@@ -87,9 +104,16 @@ To run the project locally, you’ll need:
 To manually run linting and formatting:
 
 - **Lint the code:**
-  npm run lint
+
+```bash
+   npm run lint
+```
+
 - **Format the code:**
-  npm run format
+
+```bash
+   npm run format
+```
 
 ---
 
