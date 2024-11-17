@@ -4,10 +4,73 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title></title>
+    <meta name="description" content="" />
+    <script type="module" src="/src/main.mjs"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <header>
+      <nav>
+        <button>Open/close menu</button>
+        <div>
+          <h1>Categories</h1>
+          <ul>
+            <li><a href="">Handbags</a></li>
+            <li><a href="">Bags</a></li>
+            <li><a href="">Jewelry</a></li>
+            <li><a href="">Watches</a></li>
+          </ul>
+          <a href="">Auction ending soon</a>
+          <a href="">New listings</a>
+          <a href="">Sustainability</a>
+          <a href="">Terms</a>
+          <p>Appearance</p>
+          <button>Dark/light mode</button>
+        </div>
+        <form role="search">
+          <input type="search" placeholder="Search..." aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+        <a href="/">
+          <img id="logo" src="" alt="logo" />
+        </a>
+        <button>Profile</button>
+        <div>
+          <div>
+            <h2>I already have an account</h2>
+            <form name="login">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required />
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required />
+              </div>
+              <button>Sign in</button>
+            </form>
+          </div>
+          <div>
+            <h2>I don't have an account</h2>
+            <p>
+              Enjoy added benefits and a richer experience by creating a
+              personal account
+            </p>
+            <a href="">Create my account</a>
+          </div>
+        </div>
+        <a href="">Heart</a>
+      </nav>
+    </header>
+    <main>
+      <div id="app"></div>
+    </main>
+    <footer>
+      <div>
+        <a href="/about">About Auction House</a>
+        <a href="/contact">Contact</a>
+        <a href="/FAQ">FAQ</a>
+      </div>
+    </footer>
   </body>
 </html>
