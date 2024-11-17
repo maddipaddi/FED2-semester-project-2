@@ -143,6 +143,9 @@ Keep the description concise but meaningful.
 - **`chore:`** Maintenance tasks that don't affect functionality.  
   _Example_: `chore: update README.md`
 
+- **`style:`**: Changes that affect the appearance or styling of the application, but not its functionality.  
+  _Example_: `style: update header and footer layout`
+
 - **`docs:`** Updates to documentation.  
   _Example_: `docs: add setup instructions to README`
 
