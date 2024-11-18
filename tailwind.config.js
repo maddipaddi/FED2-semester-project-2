@@ -13,6 +13,10 @@ module.exports = {
         'accent': '#4F5D3C',
         'copy': '#0C0C0C',
       },
+      fontFamily: {
+        serif: ['Baskervville', 'serif'],
+        sans: ['Roboto, sans-serif'],
+      },
     },
   },
   plugins: [],
