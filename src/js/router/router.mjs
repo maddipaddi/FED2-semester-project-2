@@ -216,4 +216,8 @@ window.onpopstate = locationHandler;
 window.route = route;
 
 locationHandler(); 
+
+router.route = route;
+
+return router;
 }
