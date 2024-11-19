@@ -554,8 +554,29 @@ video {
   display: none;
 }
 
-.font-sans {
-  font-family: Roboto, sans-serif;
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 93 60 / var(--tw-bg-opacity, 1));
+}
+
+.bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 248 / var(--tw-bg-opacity, 1));
+}
+
+.bg-copy {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 12 12 / var(--tw-bg-opacity, 1));
+}
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 44 64 / var(--tw-bg-opacity, 1));
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(115 61 75 / var(--tw-bg-opacity, 1));
 }
 
 .font-serif {
@@ -565,4 +586,24 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-copy {
+  --tw-text-opacity: 1;
+  color: rgb(12 12 12 / var(--tw-text-opacity, 1));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.dark\:bg-background:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 248 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:text-copy:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(12 12 12 / var(--tw-text-opacity, 1));
 }
