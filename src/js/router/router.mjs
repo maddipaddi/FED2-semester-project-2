@@ -47,15 +47,6 @@ const routes = {
     initFAQ();
   }
   },
-  "/account/login": {
-    template: "/templates/account/login.html",
-    title: "Log in | " + pageTitle,
-    description: "Log in to your account at Auction House.",
-    init: async () => {
-    const { initLogin } = await import("../views/account/login.mjs");
-    initLogin();
-  }
-  },
   "/account/register": {
     template: "/templates/account/register.html",
     title: "Register | " + pageTitle,

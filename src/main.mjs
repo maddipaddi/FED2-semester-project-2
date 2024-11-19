@@ -1,7 +1,9 @@
 import { router } from "./js/router/router.mjs";
+import { initLogin } from "./js/listeners/loginFormListener.mjs";
 
 function init() {
     router();
+    initLogin();
     const htmlElement = document.documentElement;
     const themeToggle = document.getElementById("theme-toggle");
 

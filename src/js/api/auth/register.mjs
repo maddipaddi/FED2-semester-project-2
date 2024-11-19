@@ -8,8 +8,7 @@ export async function register({ name, email, password }) {
   });
 
   if (response.ok) {
-    const responseData = await response.json();
-    return { ...responseData, email, password };
+    return await response.json();
   } else {
     const errorData = await response.json();
     throw new Error(errorData.message || "Failed to register");
