@@ -1,5 +1,6 @@
 export default {
   darkMode: "class",
+  mode: "jit",
   content: [
     "./index.html",
     "./src/**/*.{html,js,jsx,ts,tsx}", // Endre stier etter mappestrukturen
