@@ -1,9 +1,10 @@
 export default {
-  darkMode: "class",
+  darkMode: "media",
   mode: "jit",
   content: [
     "./index.html",
-    "./src/**/*.{html,js,jsx,ts,tsx}", // Endre stier etter mappestrukturen
+    "./src/**/*.{html,js,jsx,ts,tsx}", 
+    "./public/**/*.html",
   ],
   theme: {
     extend: {
