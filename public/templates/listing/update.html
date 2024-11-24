@@ -1,86 +1,109 @@
-<h1>CREATE NEW LISTING</h1>
-<form name="editListing">
-    <div>
-        <label for="title">Title</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          required
-          aria-required="true"
-          placeholder="Enter the title of the item"
-        />
+<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
+  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">CREATE NEW LISTING</h1>
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Form Section -->
+      <div class="bg-primary text-background p-6 rounded-md w-full md:w-3/4">
+        <form name="createListing" class="space-y-4">
+          <div>
+            <label for="title" class="block text-sm font-medium mb-1">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              aria-required="true"
+              placeholder="Enter the title of the item"
+              class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+            />
+          </div>
+          <div>
+            <label for="description" class="block text-sm font-medium mb-1">Description of the item</label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              maxlength="280"
+              aria-required="true"
+              rows="4"
+              placeholder="Provide a description of the item"
+              class="w-full px-3 py-2 border border-gray-300 rounded text-copy resize"
+            ></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Images</label>
+            <div class="space-y-2">
+              <input
+                type="url"
+                name="images[]"
+                placeholder="Enter URL for first image"
+                aria-label="Enter the URL for the first image"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
+              <input
+                type="url"
+                name="images[]"
+                placeholder="Enter URL for second image"
+                aria-label="Enter the URL for the second image"
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
+              <input
+                type="url"
+                name="images[]"
+                placeholder="Enter URL for third image"
+                aria-label="Enter the URL for the third image"
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="category" class="block text-sm font-medium mb-1">Category</label>
+              <select
+                id="category"
+                name="category"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              >
+                <option value="handbag">Handbag</option>
+                <option value="bag">Bag</option>
+                <option value="watch">Watch</option>
+                <option value="jewelry">Jewelry</option>
+              </select>
+            </div>
+            <div>
+              <label for="auctionEnds" class="block text-sm font-medium mb-1">Auction End Time</label>
+              <input
+                type="datetime-local"
+                id="auctionEnds"
+                name="auctionEnds"
+                required
+                aria-required="true"
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full bg-background text-copy py-2 px-4 rounded hover:font-bold"
+            >
+              Add Listing
+            </button>
+          </div>
+        </form>
       </div>
-      <div>
-        <label for="description">Description of the item</label>
-        <textarea
-          id="description"
-          name="description"
-          required
-          aria-required="true"
-          rows="4"
-          placeholder="Provide a description of the item"
-        ></textarea>
+
+      <!-- Tips Section -->
+      <div class="bg-accent text-background p-4 rounded-md w-full md:w-1/4">
+        <h2 class="text-lg font-serif mb-4">TIPS FOR CREATING A LISTING</h2>
+        <ul class="space-y-2 text-sm">
+          <li>Take good quality pictures</li>
+          <li>Take measurements</li>
+          <li>Write honest condition on the item</li>
+        </ul>
       </div>
-      <div>
-        <label>Image URLs</label>
-        <div>
-          <input
-            type="url"
-            name="image1"
-            id="image1"
-            placeholder="Enter URL for first image"
-            aria-label="Enter the URL for the first image"
-            required
-          />
-          <input
-            type="url"
-            name="image2"
-            id="image2"
-            placeholder="Enter URL for second image"
-            aria-label="Enter the URL for the second image"
-          />
-          <input
-            type="url"
-            name="image3"
-            id="image3"
-            placeholder="Enter URL for third image"
-            aria-label="Enter the URL for the third image"
-          />
-        </div>
-      </div>
-      <div>
-        <label for="startingPrice">Starting Price</label>
-        <input
-          type="number"
-          id="startingPrice"
-          name="startingPrice"
-          required
-          aria-required="true"
-          placeholder="Enter the starting price"
-          step="50"
-          min="0"
-        />
-      </div>
-      <div>
-        <label for="auctionEnds">Auction End Time</label>
-        <input
-          type="datetime-local"
-          id="auctionEnds"
-          name="auctionEnds"
-          required
-          aria-required="true"
-        />
-      </div>
-      <div>
-        <button type="submit">
-          Add Listing
-        </button>
-      </div>
-</form>
-<div>
-    <h1>TIPS FOR CREATING A LISTING</h1>
-    <p>Take good quality pictures</p>
-    <p>Take measurements</p>
-    <p>Write honest condition on the item</p>
-</div>
+    </div>
+  </div>
+</body>
