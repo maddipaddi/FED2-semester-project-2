@@ -1,46 +1,70 @@
-<h1>Create a new account</h1>
-<form name="register">
-  <div>
-    <label for="name">Username*</label>
-    <input
-      id="name"
-      type="text"
-      name="name"
-      required
-      maxlength="20"
-      pattern="^[\w]+$"
-      title="Please enter a username using only letters and numbers"
-    />
+<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
+  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">CREATE A NEW ACCOUNT</h1>
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row gap-8 items-start min-h-full">
+      <!-- Registreringsskjema -->
+      <div class="bg-accent text-white p-6 rounded-md w-full md:w-2/3">
+        <form name="register" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">Username*</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              maxlength="20"
+              pattern="^[\w]+$"
+              title="Please enter a username using only letters and numbers"
+              placeholder="Something fancy"
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-1">Email*</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="Please enter a valid noroff.no or stud.noroff.no address"
+              placeholder="name@stud.noroff.no"
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-medium mb-1">Password*</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              minlength="8"
+              placeholder="Something fancy"
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
+          </div>
+          <div class="pt-4">
+            <button
+              type="submit"
+              class="w-full bg-white text-accent py-2 px-4 rounded hover:bg-gray-200 transition"
+          >
+              SIGN UP
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Informasjonsboks -->
+      <div class="bg-primary text-white p-4 rounded-md w-full md:w-1/3">
+        <h2 class="text-lg font-serif mb-4">WHAT YOU'LL FIND IN YOUR ACCOUNT</h2>
+        <ul class="space-y-2 text-sm">
+          <li>Add your own listings</li>
+          <li>Access your order history</li>
+          <li>Manage your personal information</li>
+          <li>Register your wishlist</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="email">Email*</label>
-    <input
-      id="email"
-      type="email"
-      name="email"
-      required
-      pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-      title="Please enter a valid noroff.no or stud.noroff.no address"
-    />
-  </div>
-  <div>
-    <label for="password">Password*</label>
-    <input
-      type="password"
-      name="password"
-      id="password"
-      required
-      minlength="8"
-    />
-  </div>
-  <button>Sign up</button>
-</form>
-<div>
-  <h2>What you'll find in your account</h2>
-  <ul>
-    <li>Add your own listings</li>
-    <li>Access your order history</li>
-    <li>Manage your personal information</li>
-    <li>Register your wishlist</li>
-  </ul>
-</div>
+</body>
