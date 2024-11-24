@@ -1,39 +1,70 @@
-<div class="container">
-    <div class="main-content">
-        <h1>TITLE - Will fetch dynamically</h1>
-        <p>Small description - Will fetch dynamically</p>
-        <div class="main-image">
-            <img src="#" alt="Main product image">
+<body class="bg-background text-copy dark:text-background font-sans min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Main Content -->
+        <div class="md:col-span-2">
+          <h1 class="text-2xl font-serif mb-2">TITLE</h1>
+          <p class="text-sm text-copy dark:text-background mb-4">Small description</p>
+          <div class="main-image mb-4">
+            <div class="bg-gray-300 h-64 w-full"></div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-gray-300 h-32"></div>
+            <div class="bg-gray-300 h-32"></div>
+          </div>
+          <div class="description">
+            <p class="text-sm text-copy dark:text-background">
+              Full description for the item - Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Pellentesque vitae eros sem.
+            </p>
+          </div>
         </div>
-        <div class="images">
-            <img src="#" alt="Additional image 1">
-            <img src="#" alt="Additional image 2">
+
+       <!-- Sidebar Section -->
+    <div class="flex flex-col gap-6">
+        <!-- Sidebar (Blue Box) -->
+        <div class="bg-primary text-white p-6 rounded-md">
+          <h2 class="text-lg font-semibold mb-4">CURRENT BID</h2>
+          <p class="text-4xl font-bold mb-6">$2500</p>
+          <div class="mb-4">
+            <input
+              type="text"
+              placeholder="$2600 or up"
+              class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
+            />
+          </div>
+          <div class="flex gap-4 mb-6">
+            <button class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold">
+              Place bid
+            </button>
+            <button class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold">
+              Wishlist
+            </button>
+          </div>
+          <div class="text-sm mb-6">
+            <p class="flex items-center gap-2">
+              🕒 Closes: <span>Sunday 3pm EST</span>
+            </p>
+          </div>
+          <div class="bid-list text-sm">
+            <p>Bidder 1 - 10min ago $2500</p>
+            <p>Bidder 2 - 3 hours ago $2200</p>
+            <p>Bidder 3 - 5 hours ago $2100</p>
+            <p class="text-blue-200 mt-2">
+              <a href="#">See all bids (xx)</a>
+            </p>
+          </div>
         </div>
-        <div class="description">
-            <p>Full description for the item - Will fetch dynamically</p>
+  
+        <!-- Seller Info (Burgundy Box) -->
+        <div class="bg-secondary text-white p-6 rounded-md">
+          <h2 class="text-lg font-semibold mb-4">SELLER</h2>
+          <p>Account name</p>
+          <p>Listings active / Total listings</p>
+          <p class="flex items-center gap-2 mt-2">
+            <i class="fa-regular fa-user"></i> All sellers are verified
+          </p>
         </div>
+      </div>
     </div>
-    <div class="sidebar">
-        <div class="current-bid">CURRENT BID<br>Will fetch dynamically</div>
-        <input type="text" placeholder="$(dynamically) or up">
-        <div>
-            <button>Place bid</button>
-            <button>Wishlist</button>
-        </div>
-        <div class="bid-info">
-            <p>🕒 Closes: Will fetch dynamically</p>
-            <div class="bid-list">
-                <p>Bidder 1 - dynamically - 10min ago $2500 - dynamically</span></p>
-                <p>Bidder 2 - dynamically - 3 hours ago $2200 - dynamically</span></p>
-                <p>Bidder 3 - dynamically - 5 hours ago $2100 - dynamically</span></p>
-                <p><a href="#">See all bids (xx)</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="seller-info">
-    <p>SELLER</p>
-    <p>Account name - dynamically</p>
-    <p>Listings active / Total listings - dynamically</p>
-    <p>👤 All sellers are verified</p>
-</div>
+  </body>
