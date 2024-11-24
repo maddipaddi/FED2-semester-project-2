@@ -33,6 +33,77 @@ function init() {
             themeToggle.textContent = "Light mode"; // Endre knappeteksten
         }
     });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        // Venstremeny funksjonalitet
+        const menuLeft = document.getElementById("menu-left");
+        const openMenuLeftButton = document.getElementById("open-menu-left");
+        const closeMenuLeftButton = document.getElementById("close-menu-left");
+      
+        // Åpne venstremeny
+        openMenuLeftButton.addEventListener("click", () => {
+          menuLeft.style.transform = "translateX(0)";
+        });
+      
+        // Lukke venstremeny
+        closeMenuLeftButton.addEventListener("click", () => {
+          menuLeft.style.transform = "translateX(-100%)";
+        });
+      
+        // Høyremeny funksjonalitet
+        const menuRight = document.getElementById("menu-right");
+        const openMenuRightButton = document.getElementById("open-menu-right");
+        const closeMenuRightButton = document.getElementById("close-menu-right");
+      
+        // Åpne høyremeny
+        openMenuRightButton.addEventListener("click", () => {
+          menuRight.style.transform = "translateX(0)";
+        });
+      
+        // Lukke høyremeny
+        closeMenuRightButton.addEventListener("click", () => {
+          menuRight.style.transform = "translateX(100%)";
+        });
+      
+        // Søkeboks funksjonalitet
+        const searchBarContainer = document.getElementById("search-bar-container");
+        const searchIcon = document.getElementById("search-icon");
+        const closeSearchButton = document.getElementById("close-search");
+      
+        // Åpne søkeboks
+        searchIcon.addEventListener("click", () => {
+          searchBarContainer.classList.remove("hidden");
+        });
+      
+        // Lukke søkeboks
+        closeSearchButton.addEventListener("click", () => {
+          searchBarContainer.classList.add("hidden");
+        });
+      
+        // Klikk utenfor for å lukke alle elementer
+        document.addEventListener("click", (event) => {
+          // Venstremeny
+          if (!menuLeft.contains(event.target) && !openMenuLeftButton.contains(event.target)) {
+            menuLeft.style.transform = "translateX(-100%)";
+          }
+      
+          // Høyremeny
+          if (!menuRight.contains(event.target) && !openMenuRightButton.contains(event.target)) {
+            menuRight.style.transform = "translateX(100%)";
+          }
+      
+          // Søkeboks
+          if (
+            searchBarContainer &&
+            !searchBarContainer.contains(event.target) &&
+            !searchIcon.contains(event.target)
+          ) {
+            searchBarContainer.classList.add("hidden");
+          }
+        });
+      });
+      
+
 }
 
 init(); 

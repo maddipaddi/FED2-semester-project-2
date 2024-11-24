@@ -1,5 +1,5 @@
 export default {
-  darkMode: "media",
+  darkMode: "class",
   mode: "jit",
   content: [
     "./index.html",
