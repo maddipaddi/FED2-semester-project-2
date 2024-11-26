@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "build:tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch --poll",
-    "dev:vite": "vite",
-    "dev": "concurrently \"npm run build:tailwind\" \"npm run dev:vite\"",
+    "dev": "vite",
     "preview": "vite preview",
     "test": "echo \"No tests specified\" && exit 0",
     "lint": "eslint .",
