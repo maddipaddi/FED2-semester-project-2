@@ -18,9 +18,12 @@ export async function readListingsByCategory() {
   }
 }
 
-export async function readListingsByProfile(name) {
+export async function readListingsByProfileActive(name) {
+  const options = {
+    _active: true,
+  };
   try {
-    const listings = await fetchListingsByProfile(name);
+    const listings = await fetchListingsByProfile(name, options);
     return listings;
   } catch (error) {
     console.error("Error loading listings:", error); // implement error handling
