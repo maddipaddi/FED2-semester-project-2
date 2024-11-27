@@ -3,8 +3,9 @@
 import { formatDate } from "../../utilities/formatDate.mjs";
 import { renderBids } from "../renderers/renderBidsForSingleListing.mjs";
 import { getHighestBid } from "../../utilities/getHighestBid.mjs";
-import { readListingsByProfile } from "../listing/read.mjs";
 import { splitDescription } from "../../utilities/splitListingDescription.mjs";
+import { fetchListingsByProfile } from "../../api/listing/read.mjs";
+import { readListingsByProfileActive } from "../listing/read.mjs";
 
 export async function displaySingleListing(listing) {
   const title = document.getElementById("title");
@@ -54,16 +55,10 @@ export async function displaySingleListing(listing) {
   sellerNameContainer.innerText = sellerName;
 
   const sellerListings = document.getElementById("seller-listings");
-  const sellerTotalListingsArray = await readListingsByProfile(sellerName);
+  const sellerTotalListingsArray = await fetchListingsByProfile(sellerName);
 
-  const options = {
-    _active: true,
-  };
-
-  const sellerActiveListingsArray = await readListingsByProfile(
-    sellerName,
-    options
-  );
+  const sellerActiveListingsArray =
+    await readListingsByProfileActive(sellerName);
 
   sellerListings.innerText = `${sellerActiveListingsArray.length} Listings active / ${sellerTotalListingsArray.length} Total listings`;
 }
