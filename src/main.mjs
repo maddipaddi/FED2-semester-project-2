@@ -1,5 +1,6 @@
 import { router } from "./js/router/router.mjs";
 import { initLogin } from "./js/listeners/loginFormListener.mjs";
+import "./input.css";
 
 function init() {
     router();
@@ -102,8 +103,6 @@ function init() {
           }
         });
       });
-      
-
 }
 
 init(); 
