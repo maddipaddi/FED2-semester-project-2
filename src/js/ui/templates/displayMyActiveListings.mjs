@@ -20,7 +20,7 @@ export function displayMyActiveListings(listings) {
 
     const editButton = document.createElement("a");
     editButton.innerText = "Edit";
-    editButton.setAttribute("href", `/listing/edit?=${listing.id}`);
+    editButton.setAttribute("href", `/listing/update?id=${listing.id}`);
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
