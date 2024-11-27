@@ -1,5 +1,6 @@
 import { createListing } from "../../api/listing/create.mjs";
 import { setMediaObjects } from "../../utilities/setImageUrlsAsObjects.mjs";
+import { setTagsWithCategory } from "../../utilities/setTagsWithCategory.mjs";
 
 export async function onCreateListing(event) {
   event.preventDefault();
@@ -10,12 +11,15 @@ export async function onCreateListing(event) {
   const imageURLs = formData.getAll("images[]");
   const mediaObjects = setMediaObjects(imageURLs);
 
+  const selectedCategory = formValues.category;
+  const tags = setTagsWithCategory(selectedCategory);
+
   const listingData = {
     title: formValues.title,
     description: formValues.description,
-    tags: ["luxuryauctionhouse"],
+    tags: tags,
     media: mediaObjects,
-    endsAt: formValues.auctionEnds
+    endsAt: formValues.auctionEnds,
   };
 
   try {
