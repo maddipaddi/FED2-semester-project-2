@@ -1,64 +1,69 @@
-// starting point: not finished with all info 
+// starting point: not finished with all info
 
+import { formatDate } from "../../utilities/formatDate.mjs";
+import { renderBids } from "../renderers/renderBidsForSingleListing.mjs";
+import { getHighestBid } from "../../utilities/getHighestBid.mjs";
+import { readListingsByProfile } from "../listing/read.mjs";
+import { splitDescription } from "../../utilities/splitListingDescription.mjs";
 
-export function displaySingleListing(listing) {
-    const listingContainer = document.createElement("div");
+export async function displaySingleListing(listing) {
+  const title = document.getElementById("title");
+  title.innerText = listing.title;
 
-    const listingInfo = document.createElement("div");
+  const smallDescription = document.getElementById("small-description");
+  const { firstSentence, remainingText } = splitDescription(
+    listing.description
+  );
+  smallDescription.innerText = firstSentence;
 
-    const title = document.createElement("h2");
-    title.innerText = listing.title;
+  if (listing.media && listing.media.length > 0) {
+    const mediaContainerMain = document.getElementById("media-container-main");
+    const mediaContainer = document.getElementById("media-container");
 
-    let mediaContainer;
+    listing.media.forEach((mediaItem, index) => {
+      if (index === 0) {
+        const mediaMain = document.createElement("img");
+        mediaMain.setAttribute("src", mediaItem.url);
+        mediaMain.className = "h-64 w-full";
+        mediaContainerMain.appendChild(mediaMain);
+      } else {
+        const media = document.createElement("img");
+        media.setAttribute("src", mediaItem.url);
+        media.className = "h-64 w-full h-32";
+        mediaContainer.append(media);
+      }
+    });
+  }
 
-   if (listing.media && listing.media.length > 0) {
-  mediaContainer = document.createElement("div");
-  listing.media.forEach((mediaItem) => {
-    if (mediaItem.url) {
-      const media = document.createElement("img");
-      media.setAttribute("src", mediaItem.url);
-      mediaContainer.appendChild(media);
-    }
-  });
-}
-    const description = document.createElement("p")
-    description.innerText = listing.description;
+  const description = document.getElementById("description");
+  description.innerText = remainingText;
 
-    listingInfo.append(title, mediaContainer, description);
+  const currentBid = document.getElementById("current-bid");
+  currentBid.innerText = `${getHighestBid(listing.bids)}`;
 
-    const bidInfo = document.createElement("div");
+  const bidInput = document.getElementById("bid-input");
+  bidInput.setAttribute("placeholder", `${getHighestBid(listing.bids)} or up`);
 
-    const currentBidTitle = document.createElement("h3");
-    currentBidTitle.innerText = "Current bid";
+  const auctionEnd = document.getElementById("auctionEnd");
+  auctionEnd.innerText = `${formatDate(listing.endsAt)}`;
 
-    const currentBid = document.createElement("h3");
-    currentBid.innerText = ``; // will add functionality to fetch highest bid dynamically
+  renderBids(listing.bids);
 
-    const bidInput = document.createElement("input");
-    bidInput.name = "bidInput";
-    bidInput.type = "number";
+  const sellerNameContainer = document.getElementById("seller-name-container");
+  const sellerName = `${listing.seller.name}`;
+  sellerNameContainer.innerText = sellerName;
 
-    const placeBidButton = document.createElement("button");
-    placeBidButton.innerText = "Place bid";
+  const sellerListings = document.getElementById("seller-listings");
+  const sellerTotalListingsArray = await readListingsByProfile(sellerName);
 
-    const wishlistButton = document.createElement("button");
-    wishlistButton.innerText = "Wishlist";
+  const options = {
+    _active: true,
+  };
 
-    bidInfo.append(currentBidTitle, currentBid, bidInput, placeBidButton, wishlistButton);
+  const sellerActiveListingsArray = await readListingsByProfile(
+    sellerName,
+    options
+  );
 
-    const sellerInfo = document.createElement("div");
-
-    const sellerTitle = document.createElement("h3");
-    sellerTitle.innerText = "Seller";
-
-    const sellerName = document.createElement("p");
-    sellerName.innerText = `${listing.seller.name}`;
-
-    listingContainer.append(
-      listingInfo, 
-      bidInfo,
-      sellerInfo,
-    );
-
-    return listingContainer;
+  sellerListings.innerText = `${sellerActiveListingsArray.length} Listings active / ${sellerTotalListingsArray.length} Total listings`;
 }

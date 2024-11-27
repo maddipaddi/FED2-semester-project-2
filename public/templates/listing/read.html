@@ -1,70 +1,64 @@
-<body class="bg-background text-copy dark:text-background font-sans min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Main Content -->
-        <div class="md:col-span-2">
-          <h1 class="text-2xl font-serif mb-2">TITLE</h1>
-          <p class="text-sm text-copy dark:text-background mb-4">Small description</p>
-          <div class="main-image mb-4">
-            <div class="bg-gray-300 h-64 w-full"></div>
-          </div>
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            <div class="bg-gray-300 h-32"></div>
-            <div class="bg-gray-300 h-32"></div>
-          </div>
-          <div class="description">
-            <p class="text-sm text-copy dark:text-background">
-              Full description for the item - Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Pellentesque vitae eros sem.
-            </p>
-          </div>
+<body
+  class="bg-background text-copy dark:text-background font-sans min-h-screen"
+>
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div id="main-content" class="md:col-span-2">
+        <h1 id="title" class="text-2xl font-serif mb-2"></h1>
+        <p
+          id="small-description"
+          class="text-sm text-copy dark:text-background mb-4"
+        >
+          Small description
+        </p>
+        <div id="media-container-main" class="main-image mb-4"></div>
+        <div id="media-container" class="grid grid-cols-2 gap-4 mb-6"></div>
+        <div id="description" class="description">
+          <p class="text-sm text-copy dark:text-background"></p>
         </div>
+      </div>
 
-       <!-- Sidebar Section -->
-    <div class="flex flex-col gap-6">
-        <!-- Sidebar (Blue Box) -->
+      <div class="flex flex-col gap-6">
         <div class="bg-primary text-white p-6 rounded-md">
-          <h2 class="text-lg font-semibold mb-4">CURRENT BID</h2>
-          <p class="text-4xl font-bold mb-6">$2500</p>
+          <h2 class="text-lg font-semibold mb-4 uppercase">Current bid</h2>
+          <p id="current-bid" class="text-4xl font-bold mb-6"></p>
           <div class="mb-4">
             <input
-              type="text"
-              placeholder="$2600 or up"
+              name="bid-input"
+              id="bid-input"
+              type="number"
               class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
             />
           </div>
           <div class="flex gap-4 mb-6">
-            <button class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold">
+            <button
+              class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
+            >
               Place bid
             </button>
-            <button class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold">
+            <button
+              class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
+            >
               Wishlist
             </button>
           </div>
           <div class="text-sm mb-6">
             <p class="flex items-center gap-2">
-              🕒 Closes: <span>Sunday 3pm EST</span>
+              🕒 Closes:<span id="auctionEnd"></span>
             </p>
           </div>
-          <div class="bid-list text-sm">
-            <p>Bidder 1 - 10min ago $2500</p>
-            <p>Bidder 2 - 3 hours ago $2200</p>
-            <p>Bidder 3 - 5 hours ago $2100</p>
-            <p class="text-blue-200 mt-2">
-              <a href="#">See all bids (xx)</a>
-            </p>
-          </div>
+          <div id="bid-list" class="bid-list text-sm"></div>
         </div>
-  
-        <!-- Seller Info (Burgundy Box) -->
+
         <div class="bg-secondary text-white p-6 rounded-md">
-          <h2 class="text-lg font-semibold mb-4">SELLER</h2>
-          <p>Account name</p>
-          <p>Listings active / Total listings</p>
+          <h2 class="text-lg font-semibold mb-4 uppercase">Seller</h2>
+          <p id="seller-name-container"></p>
+          <p id="seller-listings"></p>
           <p class="flex items-center gap-2 mt-2">
             <i class="fa-regular fa-user"></i> All sellers are verified
           </p>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
