@@ -1,4 +1,5 @@
-// starting point: not finished with all info
+import { formatDateWithDate } from "../../utilities/formatDate.mjs";
+import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 
 export function displayListings(listings) {
   return listings.map((listing) => {
@@ -13,17 +14,27 @@ export function displayListings(listings) {
       mediaContainer.appendChild(media);
     }
 
+    const seller = document.createElement("p");
+    const sellerName = `${listing.seller.name}`;
+    seller.innerText = sellerName;
+
     const currentBid = document.createElement("p");
-    currentBid.innerText = `Current bid: `;
+    currentBid.innerText = `Current bid: ${getHighestBid(listing.bids)}`;
 
     const endingDate = document.createElement("p");
-    endingDate.innerText = `Ending: `;
+    endingDate.innerText = `Ending: ${formatDateWithDate(listing.endsAt)}`;
 
     const bidButton = document.createElement("a");
     bidButton.setAttribute("href", `/listing/read?id=${listing.id}`);
     bidButton.innerText = "Bid";
 
-    listingContainer.append(mediaContainer, currentBid, endingDate, bidButton);
+    listingContainer.append(
+      mediaContainer,
+      seller,
+      currentBid,
+      endingDate,
+      bidButton
+    );
 
     return listingContainer;
   });

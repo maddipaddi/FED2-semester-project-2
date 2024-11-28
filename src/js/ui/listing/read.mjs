@@ -8,6 +8,8 @@ export async function readListingsByCategory() {
   const category = urlParams.get("category");
   const options = {
     _tag: category,
+    _bids: true,
+    _seller: true,
   };
   try {
     // Fetch listings based on the category
