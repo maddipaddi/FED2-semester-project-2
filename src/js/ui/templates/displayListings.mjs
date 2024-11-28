@@ -71,7 +71,6 @@ export function displayListings(listings) {
       "bg-accent",
       "text-white",
       "text-sm",
-      "font-bold",
       "py-2",
       "px-4",
       "rounded-md",
@@ -79,7 +78,7 @@ export function displayListings(listings) {
       "hover:font-bold",
       "uppercase"
     );
-    bidButton.innerText = "BID";
+    bidButton.innerText = "Bid";
 
     bidAndButtonContainer.append(currentBid, bidButton);
 
