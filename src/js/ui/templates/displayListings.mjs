@@ -4,36 +4,89 @@ import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 export function displayListings(listings) {
   return listings.map((listing) => {
     const listingContainer = document.createElement("div");
+    listingContainer.classList.add(
+      "bg-white",
+      "shadow",
+      "rounded-lg",
+      "p-4",
+      "flex",
+      "flex-col",
+      "justify-between"
+    );
 
     const mediaContainer = document.createElement("div");
+    mediaContainer.classList.add(
+      "w-full",
+      "h-48",
+      "bg-gray-200",
+      "rounded-md",
+      "overflow-hidden",
+      "mb-4"
+    );
 
     if (listing.media && listing.media.length > 0) {
       const firstMedia = listing.media[0];
       const media = document.createElement("img");
       media.setAttribute("src", firstMedia.url);
+      media.classList.add("w-full", "h-full", "object-cover");
       mediaContainer.appendChild(media);
     }
 
-    const seller = document.createElement("p");
-    const sellerName = `${listing.seller.name}`;
-    seller.innerText = sellerName;
+    // Container for seller name and ending date
+    const sellerAndEndingContainer = document.createElement("div");
+    sellerAndEndingContainer.classList.add(
+      "flex",
+      "justify-between",
+      "items-center",
+      "mb-2"
+    );
 
-    const currentBid = document.createElement("p");
-    currentBid.innerText = `Current bid: ${getHighestBid(listing.bids)}`;
+    const seller = document.createElement("p");
+    seller.classList.add("text-sm", "font-medium", "text-gray-700");
+    seller.innerText = `${listing.seller.name}`;
 
     const endingDate = document.createElement("p");
+    endingDate.classList.add("text-sm", "text-gray-500");
     endingDate.innerText = `Ending: ${formatDateWithDate(listing.endsAt)}`;
+
+    sellerAndEndingContainer.append(seller, endingDate);
+
+    // Container for current bid and bid button
+    const bidAndButtonContainer = document.createElement("div");
+    bidAndButtonContainer.classList.add(
+      "flex",
+      "justify-between",
+      "items-center",
+      "gap-4",
+      "mt-2"
+    );
+
+    const currentBid = document.createElement("p");
+    currentBid.classList.add("text-sm", "font-bold", "text-gray-800");
+    currentBid.innerText = `Current bid: ${getHighestBid(listing.bids)}`;
 
     const bidButton = document.createElement("a");
     bidButton.setAttribute("href", `/listing/read?id=${listing.id}`);
-    bidButton.innerText = "Bid";
+    bidButton.classList.add(
+      "bg-accent",
+      "text-white",
+      "text-sm",
+      "font-bold",
+      "py-2",
+      "px-4",
+      "rounded-md",
+      "text-center",
+      "hover:font-bold",
+      "uppercase"
+    );
+    bidButton.innerText = "BID";
+
+    bidAndButtonContainer.append(currentBid, bidButton);
 
     listingContainer.append(
       mediaContainer,
-      seller,
-      currentBid,
-      endingDate,
-      bidButton
+      sellerAndEndingContainer,
+      bidAndButtonContainer
     );
 
     return listingContainer;
