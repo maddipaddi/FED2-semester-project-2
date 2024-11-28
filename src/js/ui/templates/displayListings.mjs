@@ -17,7 +17,7 @@ export function displayListings(listings) {
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
       "w-full",
-      "h-48",
+      "h-52",
       "bg-gray-200",
       "rounded-md",
       "overflow-hidden",
