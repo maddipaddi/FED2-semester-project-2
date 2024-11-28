@@ -1,6 +1,6 @@
 export const getHighestBid = (bids) => {
   if (!bids || bids.length === 0) {
-    return "0";
+    return "$0";
   }
 
   const highestBid = bids.reduce((max, bid) => {
