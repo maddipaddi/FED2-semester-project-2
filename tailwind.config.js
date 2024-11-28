@@ -3,7 +3,7 @@ export default {
   mode: "jit",
   content: [
     "./index.html",
-    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,mjs,jsx,ts,tsx}",
     "./public/**/*.html",
   ],
   theme: {
