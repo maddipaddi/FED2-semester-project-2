@@ -1,12 +1,16 @@
-<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
-  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">CREATE NEW LISTING</h1>
+<body
+  class="bg-background text-copy font-sans min-h-screen flex items-center justify-center"
+>
+  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">EDIT LISTING</h1>
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row gap-8">
       <!-- Form Section -->
       <div class="bg-primary text-background p-6 rounded-md w-full md:w-3/4">
-        <form name="createListing" class="space-y-4">
+        <form name="updateListing" class="space-y-4">
           <div>
-            <label for="title" class="block text-sm font-medium mb-1">Title</label>
+            <label for="title" class="block text-sm font-medium mb-1"
+              >Title</label
+            >
             <input
               type="text"
               id="title"
@@ -18,7 +22,9 @@
             />
           </div>
           <div>
-            <label for="description" class="block text-sm font-medium mb-1">Description of the item</label>
+            <label for="description" class="block text-sm font-medium mb-1"
+              >Description of the item</label
+            >
             <textarea
               id="description"
               name="description"
@@ -59,7 +65,9 @@
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label for="category" class="block text-sm font-medium mb-1">Category</label>
+              <label for="category" class="block text-sm font-medium mb-1"
+                >Category</label
+              >
               <select
                 id="category"
                 name="category"
@@ -73,7 +81,9 @@
               </select>
             </div>
             <div>
-              <label for="auctionEnds" class="block text-sm font-medium mb-1">Auction End Time</label>
+              <label for="auctionEnds" class="block text-sm font-medium mb-1"
+                >Auction End Time</label
+              >
               <input
                 type="datetime-local"
                 id="auctionEnds"
@@ -89,7 +99,7 @@
               type="submit"
               class="w-full bg-background text-copy py-2 px-4 rounded hover:font-bold"
             >
-              Add Listing
+              Update Listing
             </button>
           </div>
         </form>
