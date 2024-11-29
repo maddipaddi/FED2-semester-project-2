@@ -1,11 +1,10 @@
-// starting point: not finished with all info
-
 import { formatDateWithDayTimeDate } from "../../utilities/formatDate.mjs";
 import { renderBids } from "../renderers/renderBidsForSingleListing.mjs";
 import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 import { splitDescription } from "../../utilities/splitListingDescription.mjs";
 import { fetchListingsByProfile } from "../../api/listing/read.mjs";
 import { readListingsByProfileActive } from "../listing/read.mjs";
+import { initializeWishlistButton } from "../components/wishlist/wishlistBtn.mjs";
 
 export async function displaySingleListing(listing) {
   const title = document.getElementById("title");
@@ -44,6 +43,8 @@ export async function displaySingleListing(listing) {
 
   const bidInput = document.getElementById("bid-input");
   bidInput.setAttribute("placeholder", `${getHighestBid(listing.bids)} or up`);
+
+  initializeWishlistButton(listing.id);
 
   const auctionEnd = document.getElementById("auctionEnd");
   auctionEnd.innerText = `${formatDateWithDayTimeDate(listing.endsAt)}`;
