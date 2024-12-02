@@ -2,6 +2,7 @@ import {
   fetchListings,
   fetchListingsByProfile,
 } from "../../api/listing/read.mjs";
+import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 
 export async function readListingsByCategory() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -27,6 +28,15 @@ export async function readListingsByProfileActive(name) {
   try {
     const listings = await fetchListingsByProfile(name, options);
     return listings;
+  } catch (error) {
+    console.error("Error loading listings:", error); // implement error handling
+  }
+}
+
+export async function readListingsByProfileInactive(name) {
+  try {
+    const listings = await fetchListingsByProfile(name);
+    return inactiveListings(listings);
   } catch (error) {
     console.error("Error loading listings:", error); // implement error handling
   }
