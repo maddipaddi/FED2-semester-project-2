@@ -1,1 +1,5 @@
-export function initInactive () {};
+import { renderMyInactiveListings } from "../../ui/renderers/renderMyInactiveListings.mjs";
+
+export function initInactive() {
+  renderMyInactiveListings();
+}
