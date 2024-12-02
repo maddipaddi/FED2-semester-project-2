@@ -47,3 +47,17 @@ export const fetchListingsByProfile = async (name, options = {}) => {
     console.error("Error fetching listings:", error); // for dev purposes, remember to add user-friendly messages displayed to user later
   }
 };
+
+export const fetchBidsByProfile = async (name, options = {}) => {
+  const query = new URLSearchParams(options);
+  const url = `${API_AUCTION_PROFILES}/${name}/bids?${query.toString()}`;
+  try {
+    const response = await authFetch(url);
+    if (!response.ok) throw new Error("Failed to fetch listings");
+    const data = await response.json();
+    const bids = data.data;
+    return bids;
+  } catch (error) {
+    console.error("Error fetching bids:", error); // for dev purposes, remember to add user-friendly messages displayed to user later
+  }
+};

@@ -1,4 +1,5 @@
 import {
+  fetchBidsByProfile,
   fetchListings,
   fetchListingsByProfile,
 } from "../../api/listing/read.mjs";
@@ -37,6 +38,19 @@ export async function readListingsByProfileInactive(name) {
   try {
     const listings = await fetchListingsByProfile(name);
     return inactiveListings(listings);
+  } catch (error) {
+    console.error("Error loading listings:", error); // implement error handling
+  }
+}
+
+export async function readBidsByProfileActive(name) {
+  const options = {
+    _active: true,
+    _listings: true,
+  };
+  try {
+    const bids = await fetchBidsByProfile(name, options);
+    return bids;
   } catch (error) {
     console.error("Error loading listings:", error); // implement error handling
   }
