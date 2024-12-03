@@ -14,6 +14,7 @@ export function renderProfileMenu() {
 
     const logoutButton = document.createElement("button");
     logoutButton.innerText = "Logout";
+    logoutButton.setAttribute("id", "logout-btn");
 
     profileMenu.appendChild(profileLink);
     profileMenu.appendChild(logoutButton);
