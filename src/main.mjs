@@ -1,12 +1,14 @@
 import { router } from "./js/router/router.mjs";
 import { renderProfileMenu } from "./js/ui/renderers/renderProfileMenu.mjs";
 import { initLogin } from "./js/listeners/loginFormListener.mjs";
+import { logoutListener } from "./js/listeners/logoutListener.mjs";
 import "./input.css";
 
 function init() {
   router();
   renderProfileMenu();
   initLogin();
+  logoutListener();
   const htmlElement = document.documentElement;
   const themeToggle = document.getElementById("theme-toggle");
 
