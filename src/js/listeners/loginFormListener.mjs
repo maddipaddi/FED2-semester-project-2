@@ -1,6 +1,10 @@
 import { onLogin } from "../ui/auth/login.mjs";
 
-export function initLogin () {
+export function initLogin() {
   const form = document.forms.login;
-  form.addEventListener("submit", onLogin);
-};
+  if (!form) {
+    return;
+  } else {
+    form.addEventListener("submit", onLogin);
+  }
+}
