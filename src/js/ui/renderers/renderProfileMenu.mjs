@@ -8,15 +8,54 @@ export function renderProfileMenu() {
 
   if (user) {
     // Logged-in view
+    const profileText = document.createElement("p");
+    profileText.classList.add("text-sm", "text-copy", "mb-1", "mt-9", "font-serif"); 
+    profileText.innerText = "Navigate to your profile here:";
+
     const profileLink = document.createElement("a");
     profileLink.setAttribute("href", "/my-profile/read");
+    profileLink.classList.add(
+      "mb-6",
+      "bg-accent",
+      "text-background",
+      "w-full",
+      "px-3",
+      "py-2",
+      "border",
+      "border-copy",
+      "dark:border-background",
+      "hover:font-bold",
+      "appearance-none", 
+      "text-center", 
+      "block"
+    );
     profileLink.innerText = "My account";
+
+    const logoutText = document.createElement("p");
+    logoutText.classList.add("text-sm", "text-copy", "mb-1", "font-serif"); 
+    logoutText.innerText = "You can log out of your account here, but we hope we'll see you back soon!";
 
     const logoutButton = document.createElement("button");
     logoutButton.innerText = "Logout";
+    logoutButton.classList.add(
+      "bg-secondary",
+      "text-background",
+      "w-full",
+      "px-3",
+      "py-2",
+      "border",
+      "border-copy",
+      "dark:border-background",
+      "hover:font-bold",
+      "appearance-none", 
+      "text-center", 
+      "block"
+    );
     logoutButton.setAttribute("id", "logout-btn");
 
+    profileMenu.appendChild(profileText);
     profileMenu.appendChild(profileLink);
+    profileMenu.appendChild(logoutText);
     profileMenu.appendChild(logoutButton);
   } else {
     // Logged-out view
@@ -33,7 +72,7 @@ export function renderProfileMenu() {
                   type="email"
                   name="email"
                   required
-                  class="w-full px-3 py-2 border border-copy rounded bg-background text-copy dark:bg-copy dark:text-background dark:border-white"
+                  class="w-full px-3 py-2 border border-copy rounded bg-background text-copy dark:bg-copy dark:text-background dark:border-background"
                 />
               </div>
               <div>
