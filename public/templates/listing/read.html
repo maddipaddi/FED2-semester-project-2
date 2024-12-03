@@ -22,27 +22,30 @@
         <div class="bg-primary text-white p-6 rounded-md">
           <h2 class="text-lg font-semibold mb-4 uppercase">Current bid</h2>
           <p id="current-bid" class="text-4xl font-bold mb-6"></p>
-          <div class="mb-4">
-            <input
-              name="bid-input"
-              id="bid-input"
-              type="number"
-              class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
-            />
-          </div>
-          <div class="flex gap-4 mb-6">
-            <button
-              class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
-            >
-              Place bid
-            </button>
-            <button
-              id="wishlist-button"
-              class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
-            >
-              Wishlist
-            </button>
-          </div>
+          <form name="placeBid">
+            <div class="mb-4">
+              <input
+                name="amount"
+                id="amount"
+                type="number"
+                class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
+              />
+            </div>
+            <div class="flex gap-4 mb-6">
+              <button
+                type="submit"
+                class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
+              >
+                Place bid
+              </button>
+              <button
+                id="wishlist-button"
+                class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
+              >
+                Wishlist
+              </button>
+            </div>
+          </form>
           <div class="text-sm mb-6">
             <p class="flex items-center gap-2">
               🕒 Closes:<span id="auctionEnd"></span>
