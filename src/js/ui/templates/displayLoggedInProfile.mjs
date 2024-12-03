@@ -17,8 +17,16 @@ export async function displayLoggedInProfile() {
   profilename.innerText = `${profile.name}`;
 
   const profileBio = document.getElementById("profile-bio");
-  profileBio.innerText = `${profile.bio}`;
+  if (profileBio) {
+    if (!profile.bio) {
+      profileBio.innerText = "Update your profile to display your bio here";
+    } else {
+      profileBio.innerText = `${profile.bio}`;
+    }
+  }
 
   const profileCredits = document.getElementById("profile-credits");
-  profileCredits.innerText = `Balance: $${profile.credits}`;
+  if (profileCredits) {
+    profileCredits.innerText = `Balance: $${profile.credits}`;
+  }
 }
