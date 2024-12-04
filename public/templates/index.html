@@ -1,46 +1,43 @@
-<div>
-  <h1>Exclusive selection</h1>
-  <p>
+<div class="bg-primary text-background m-5 p-6 text-center">
+  <div>
+    <h1 class="text-2xl mb-6 font-serif uppercase">Exclusive selection</h1>
+    <p>
     Bid on high-quality, one-of-a-kind finds in this exceptional selection of
     special objects.
-  </p>
-  <p>Explore now</p>
-  <img />
-  <img />
-  <img />
-  <img />
+    </p>
+    <p>Explore now</p>
+  </div>
 </div>
 <div>
-  <h2>Your daily discoveries</h2>
-  <ul>
-    <li>
-      <a href="/listings/read?category=handbags"><img />Handbags</a>
+  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">Your daily discoveries</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-5">
+    <li class="flex flex-col items-center">
+      <a href="/listings/read?category=handbags" class="text-center">
+        <span class="block mb-2 font-semibold">Handbags</span>
+        <img src="/assets/handbag-category.png" alt="Handbags" class="w-32 h-32 object-contain" />
+      </a>
     </li>
-    <li>
-      <a href="/listings/read?category=bags"><img />Bags</a>
+    <li class="flex flex-col items-center">
+      <a href="/listings/read?category=bags" class="text-center">
+        <span class="block mb-2 font-semibold">Bags</span>
+        <img src="/assets/backpack-categoty.png" alt="Bags" class="w-32 h-32 object-contain" />
+      </a>
     </li>
-    <li>
-      <a href="/listings/read?category=jewelry"><img />Jewelry</a>
+    <li class="flex flex-col items-center">
+      <a href="/listings/read?category=jewelry" class="text-center">
+        <span class="block mb-2 font-semibold">Jewelry</span>
+        <img src="/assets/jewelery-category.png" alt="Jewelry" class="w-32 h-32 object-contain" />
+      </a>
     </li>
-    <li>
-      <a href="/listings/read?category=watches"><img />Watches</a>
+    <li class="flex flex-col items-center">
+      <a href="/listings/read?category=watches" class="text-center">
+        <span class="block mb-2 font-semibold">Watches</span>
+        <img src="/assets/watch-category.png" alt="Watches" class="w-32 h-32 object-contain" />
+      </a>
     </li>
   </ul>
 </div>
 <div>
-  <h2>Auctions ending soon</h2>
-  <ul>
-    <li>
-      <a href=""><img />xxxxxx</a>
-    </li>
-    <li>
-      <a href=""><img />xxxxxx</a>
-    </li>
-    <li>
-      <a href=""><img />xxxxxx</a>
-    </li>
-    <li>
-      <a href=""><img />xxxxxx</a>
-    </li>
-  </ul>
+  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">View all listings</h2>
+  <div id="allListings"></div>
 </div>
