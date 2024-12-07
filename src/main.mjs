@@ -138,7 +138,7 @@ function init() {
   
     // Test: Vis modalen manuelt
     //showModal(errorModal); // Kall for å vise Error
-    showModal(successModal); // Kall for å vise Success
+    //showModal(successModal); // Kall for å vise Success
   });
   
 }
