@@ -161,14 +161,41 @@
       </div>
     </div>
 
-    <main class="flex-grow">
+    <main class="flex-grow relative">
+      <div id="user-message-error" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
+        <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
+          <h2 id="error-title" class="font-serif font-extrabold uppercase text-secondary text-center mb-4 text-lg tracking-wide">
+            Error
+          </h2>
+          <p id="error-message" class="text-center text-copy text-base leading-relaxed">
+            Description
+          </p>
+          <button id="dismiss-error" class="mt-4 w-full bg-secondary text-white py-2 px-4 rounded hover:font-bold">
+            Dismiss
+          </button>
+        </div>
+      </div>
+
+      <div id="user-message-success" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
+        <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
+          <h2 id="success-title" class="font-serif font-extrabold uppercase text-accent text-center mb-4 text-lg tracking-wide">
+            Success
+          </h2>
+          <p id="success-message" class="text-center text-copy text-base leading-relaxed">
+            Your operation was successful!
+          </p>
+          <button id="dismiss-success" class="mt-4 w-full bg-accent text-white py-2 px-4 rounded hover:font-bold">
+            Dismiss
+          </button>
+        </div>
+      </div>
+    
       <div id="app" class="container mx-auto py-8"></div>
     </main>
-
+    
     <footer>
       <div
-        class="bg-primary text-white font-sans h-24 flex justify-evenly w-full flex-wrap gap-4 items-center"
-      >
+        class="bg-primary text-white font-sans h-24 flex justify-evenly w-full flex-wrap gap-4 items-center">
         <a href="/about">About Auction House</a>
         <a href="/contact">Contact</a>
         <a href="/FAQ">FAQ</a>
