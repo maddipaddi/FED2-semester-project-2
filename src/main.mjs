@@ -113,6 +113,34 @@ function init() {
       }
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const errorModal = document.getElementById("user-message-error");
+    const successModal = document.getElementById("user-message-success");
+    const dismissError = document.getElementById("dismiss-error");
+    const dismissSuccess = document.getElementById("dismiss-success");
+  
+    // Vis modal-funksjon
+    function showModal(modal) {
+      modal.classList.remove("hidden");
+    }
+  
+    // Skjul modal-funksjon
+    function hideModal(modal) {
+      modal.classList.add("hidden");
+    }
+  
+    // Lukk Error Modal
+    dismissError.addEventListener("click", () => hideModal(errorModal));
+  
+    // Lukk Success Modal
+    dismissSuccess.addEventListener("click", () => hideModal(successModal));
+  
+    // Test: Vis modalen manuelt
+    //showModal(errorModal); // Kall for å vise Error
+    showModal(successModal); // Kall for å vise Success
+  });
+  
 }
 
 init();
