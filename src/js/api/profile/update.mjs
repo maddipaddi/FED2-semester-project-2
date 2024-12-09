@@ -1,6 +1,6 @@
 import { authFetch } from "../authFetch.mjs";
 import { API_AUCTION_PROFILES } from "../constants.mjs";
-import { router } from "../../router/router.mjs";
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 
 export async function updateProfile(name, data) {
   const response = await authFetch(`${API_AUCTION_PROFILES}/${name}`, {
@@ -8,11 +8,8 @@ export async function updateProfile(name, data) {
     body: JSON.stringify(data),
   });
 
-  if (response.ok) {
-    alert("Profile was updated");
-    router.route("/my-profile/read");
-  } else {
-    throw new Error("Failed to update profile");
+  if (!response.ok) {
+    handleErrors(response);
   }
 
   return await response.json();
