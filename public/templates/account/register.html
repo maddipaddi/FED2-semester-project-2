@@ -1,12 +1,41 @@
-<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
-  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">CREATE A NEW ACCOUNT</h1>
+<body
+  class="bg-background text-copy font-sans min-h-screen flex items-center justify-center"
+>
+  <div
+    id="user-message-container"
+    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+  >
+    <div
+      class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+    >
+      <h2
+        id="message-title"
+        class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+      ></h2>
+      <p
+        id="message-description"
+        class="text-center text-copy text-base leading-relaxed"
+      ></p>
+      <button
+        id="dismiss-btn"
+        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 pt-4">
+    CREATE A NEW ACCOUNT
+  </h1>
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row gap-8 items-start min-h-full">
       <!-- Registreringsskjema -->
       <div class="bg-accent text-white p-6 rounded-md w-full md:w-2/3">
         <form name="register" class="space-y-4">
           <div>
-            <label for="name" class="block text-sm font-medium mb-1">Username*</label>
+            <label for="name" class="block text-sm font-medium mb-1"
+              >Username*</label
+            >
             <input
               id="name"
               type="text"
@@ -20,7 +49,9 @@
             />
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium mb-1">Email*</label>
+            <label for="email" class="block text-sm font-medium mb-1"
+              >Email*</label
+            >
             <input
               id="email"
               type="email"
@@ -33,7 +64,9 @@
             />
           </div>
           <div>
-            <label for="password" class="block text-sm font-medium mb-1">Password*</label>
+            <label for="password" class="block text-sm font-medium mb-1"
+              >Password*</label
+            >
             <input
               type="password"
               name="password"
@@ -48,7 +81,7 @@
             <button
               type="submit"
               class="w-full bg-white text-accent py-2 px-4 rounded hover:font-bold"
-          >
+            >
               SIGN UP
             </button>
           </div>
@@ -57,7 +90,9 @@
 
       <!-- Informasjonsboks -->
       <div class="bg-primary text-white p-4 rounded-md w-full md:w-1/3">
-        <h2 class="text-lg font-serif mb-4">WHAT YOU'LL FIND IN YOUR ACCOUNT</h2>
+        <h2 class="text-lg font-serif mb-4">
+          WHAT YOU'LL FIND IN YOUR ACCOUNT
+        </h2>
         <ul class="space-y-2 text-sm">
           <li>Add your own listings</li>
           <li>Access your order history</li>
