@@ -1,4 +1,8 @@
 import { deletePost } from "../../api/listing/delete.mjs";
+import {
+  displayErrorMessage,
+  displaySuccessMessage,
+} from "../components/displayMessageToUser/displayMessage.mjs";
 
 export async function onDeletePost(event) {
   event.preventDefault();
@@ -9,8 +13,12 @@ export async function onDeletePost(event) {
 
   try {
     await deletePost(id);
-    alert("The post was deleted");
+    displaySuccessMessage("Listing was deleted.");
   } catch (error) {
-    console.error("Create listing failed:", error); // for dev purposes, remember to add user-friendly messages displayed to user later
+    displayErrorMessage(error);
+  } finally {
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
   }
 }

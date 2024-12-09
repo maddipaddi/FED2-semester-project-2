@@ -2,6 +2,10 @@ import { updateListing } from "../../api/listing/update.mjs";
 import { findId } from "../../utilities/findId.mjs";
 import { setMediaObjects } from "../../utilities/setImageUrlsAsObjects.mjs";
 import { setTagsWithCategory } from "../../utilities/setTagsWithCategory.mjs";
+import {
+  displayErrorMessage,
+  displaySuccessMessage,
+} from "../components/displayMessageToUser/displayMessage.mjs";
 
 export async function onUpdateListing(event) {
   event.preventDefault();
@@ -25,5 +29,14 @@ export async function onUpdateListing(event) {
 
   const id = findId();
 
-  updateListing(id, listingData);
+  try {
+    await updateListing(id, listingData);
+    displaySuccessMessage("Listing was updated.");
+  } catch (error) {
+    displayErrorMessage(error);
+  } finally {
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
+  }
 }

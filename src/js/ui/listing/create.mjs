@@ -1,6 +1,10 @@
 import { createListing } from "../../api/listing/create.mjs";
 import { setMediaObjects } from "../../utilities/setImageUrlsAsObjects.mjs";
 import { setTagsWithCategory } from "../../utilities/setTagsWithCategory.mjs";
+import {
+  displayErrorMessage,
+  displaySuccessMessage,
+} from "../components/displayMessageToUser/displayMessage.mjs";
 
 export async function onCreateListing(event) {
   event.preventDefault();
@@ -24,7 +28,12 @@ export async function onCreateListing(event) {
 
   try {
     await createListing(listingData);
+    displaySuccessMessage("You have added a listing.");
   } catch (error) {
-    console.error("Create listing failed:", error); // for dev purposes, remember to add user-friendly messages displayed to user later
+    displayErrorMessage(error);
+  } finally {
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
   }
 }
