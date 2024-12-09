@@ -1,4 +1,8 @@
 import { login } from "../../api/auth/login.mjs";
+import {
+  displaySuccessMessage,
+  displayErrorMessage,
+} from "../components/displayMessageToUser/displayMessage.mjs";
 
 export async function onLogin(event) {
   event.preventDefault();
@@ -7,11 +11,14 @@ export async function onLogin(event) {
   const account = Object.fromEntries(formData.entries());
 
   try {
-    // add a loading spinner or disable form button during async operation?
+    // add a loading spinner?
     await login(account);
-    alert("Login successful!"); // change to more user friendly feedback like a modal?
-    window.location.reload();
+    displaySuccessMessage("Login successful!");
   } catch (error) {
-    console.error("Registration failed:", error); // for dev purposes, remember to add user-friendly messages displayed to user later
+    displayErrorMessage(error);
+  } finally {
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
   }
 }

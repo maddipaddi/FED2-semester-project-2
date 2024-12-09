@@ -1,3 +1,4 @@
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 import { authFetch } from "../authFetch.mjs";
 import { API_AUTH_LOGIN } from "../constants.mjs";
 import { save } from "../storage/save.mjs";
@@ -14,8 +15,6 @@ export async function login({ email, password }) {
     save("profile", profile);
     return profile;
   } else {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to login");
+    await handleErrors(response);
   }
 }
-
