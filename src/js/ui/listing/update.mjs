@@ -1,4 +1,5 @@
 import { updateListing } from "../../api/listing/update.mjs";
+import { router } from "../../router/router.mjs";
 import { findId } from "../../utilities/findId.mjs";
 import { setMediaObjects } from "../../utilities/setImageUrlsAsObjects.mjs";
 import { setTagsWithCategory } from "../../utilities/setTagsWithCategory.mjs";
@@ -32,11 +33,13 @@ export async function onUpdateListing(event) {
   try {
     await updateListing(id, listingData);
     displaySuccessMessage("Listing was updated.");
+    setTimeout(function () {
+      router.route("/my-listings/active");
+    }, 2000);
   } catch (error) {
     displayErrorMessage(error);
-  } finally {
     setTimeout(function () {
-      location.reload();
-    }, 3000);
+      router.route(`/listing/update?id=${id}`);
+    }, 2000);
   }
 }
