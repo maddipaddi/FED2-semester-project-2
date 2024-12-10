@@ -22,7 +22,6 @@ export async function onRegister(event) {
     router.route("/");
   } catch (error) {
     displayErrorMessage(error, "Profile already exists.");
-  } finally {
     setTimeout(function () {
       location.reload();
     }, 3000);
