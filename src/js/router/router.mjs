@@ -49,6 +49,16 @@ export function router() {
         initFAQ();
       },
     },
+    "/terms": {
+      template: "/templates/terms.html",
+      title: "Terms | " + pageTitle,
+      description: "Read Auction House's terms.",
+    },
+    "/sustainability": {
+      template: "/templates/sustainability.html",
+      title: "Sustainability | " + pageTitle,
+      description: "Read about Auction House's views on sustainability.",
+    },
     "/account/register": {
       template: "/templates/account/register.html",
       title: "Register | " + pageTitle,
