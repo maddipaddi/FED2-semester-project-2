@@ -1,38 +1,81 @@
+<div
+  id="user-message-container"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+>
+  <div
+    class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+  >
+    <h2
+      id="message-title"
+      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+    ></h2>
+    <p
+      id="message-description"
+      class="text-center text-copy text-base leading-relaxed"
+    ></p>
+    <button
+      id="dismiss-btn"
+      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+    >
+      Dismiss
+    </button>
+  </div>
+</div>
 <div class="bg-primary text-background m-5 p-6 text-center">
   <div>
     <h1 class="text-2xl mb-6 font-serif uppercase">Exclusive selection</h1>
     <p>
-    Bid on high-quality, one-of-a-kind finds in this exceptional selection of
-    special objects.
+      Bid on high-quality, one-of-a-kind finds in this exceptional selection of
+      special objects.
     </p>
     <p>Explore now</p>
   </div>
 </div>
 <div>
-  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">Your daily discoveries</h2>
-  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-5">
+  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">
+    Your daily discoveries
+  </h2>
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-5"
+  >
     <li class="flex flex-col items-center">
       <a href="/listings/read?category=handbags" class="text-center">
         <span class="block mb-2 font-semibold">Handbags</span>
-        <img src="/assets/handbag-category.png" alt="Handbags" class="w-32 h-32 object-contain" />
+        <img
+          src="/assets/handbag-category.png"
+          alt="Handbags"
+          class="w-32 h-32 object-contain"
+        />
       </a>
     </li>
     <li class="flex flex-col items-center">
       <a href="/listings/read?category=bags" class="text-center">
         <span class="block mb-2 font-semibold">Bags</span>
-        <img src="/assets/backpack-categoty.png" alt="Bags" class="w-32 h-32 object-contain" />
+        <img
+          src="/assets/backpack-categoty.png"
+          alt="Bags"
+          class="w-32 h-32 object-contain"
+        />
       </a>
     </li>
     <li class="flex flex-col items-center">
       <a href="/listings/read?category=jewelry" class="text-center">
         <span class="block mb-2 font-semibold">Jewelry</span>
-        <img src="/assets/jewelery-category.png" alt="Jewelry" class="w-32 h-32 object-contain" />
+        <img
+          src="/assets/jewelery-category.png"
+          alt="Jewelry"
+          class="w-32 h-32 object-contain"
+        />
       </a>
     </li>
     <li class="flex flex-col items-center">
       <a href="/listings/read?category=watches" class="text-center">
         <span class="block mb-2 font-semibold">Watches</span>
-        <img src="/assets/watch-category.png" alt="Watches" class="w-32 h-32 object-contain" />
+        <img
+          src="/assets/watch-category.png"
+          alt="Watches"
+          class="w-32 h-32 object-contain"
+        />
       </a>
     </li>
   </ul>

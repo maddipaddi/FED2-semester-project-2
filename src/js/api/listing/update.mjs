@@ -1,7 +1,11 @@
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 import { authFetch } from "../authFetch.mjs";
 import { API_AUCTION_LISTINGS } from "../constants.mjs";
 
-export async function updateListing(id, { title, description, tags, media, endsAt }) {
+export async function updateListing(
+  id,
+  { title, description, tags, media, endsAt }
+) {
   if (!id) {
     throw new Error("Update requires a post ID");
   }
@@ -12,10 +16,8 @@ export async function updateListing(id, { title, description, tags, media, endsA
   });
 
   if (response.ok) {
-    alert("Listing was updated")
+    return await response.json();
   } else {
-    throw new Error("Failed to update the listing");
+    await handleErrors(response);
   }
-
-  return await response.json();
 }

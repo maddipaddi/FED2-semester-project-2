@@ -1,3 +1,4 @@
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 import { authFetch } from "../authFetch.mjs";
 import { API_AUCTION_LISTINGS } from "../constants.mjs";
 
@@ -11,9 +12,6 @@ export async function deletePost(id) {
   });
 
   if (!response.ok) {
-    const errorMessage = await response.text(); // Get error details if provided
-    throw new Error(
-      `Failed to delete post: ${errorMessage || response.statusText}`
-    );
+    await handleErrors(response);
   }
 }

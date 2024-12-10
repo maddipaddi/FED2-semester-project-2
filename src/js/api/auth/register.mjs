@@ -1,5 +1,6 @@
 import { API_AUTH_REGISTER } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 
 export async function register({ name, email, password }) {
   const response = await authFetch(API_AUTH_REGISTER, {
@@ -10,7 +11,6 @@ export async function register({ name, email, password }) {
   if (response.ok) {
     return await response.json();
   } else {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to register");
+    await handleErrors(response);
   }
 }

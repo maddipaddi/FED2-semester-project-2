@@ -1,5 +1,6 @@
 import { authFetch } from "../authFetch.mjs";
 import { API_AUCTION_LISTINGS } from "../constants.mjs";
+import { handleErrors } from "../../utilities/handleErrors.mjs";
 
 export async function bidOnListing(id, data) {
   const response = await authFetch(`${API_AUCTION_LISTINGS}/${id}/bids`, {
@@ -8,9 +9,8 @@ export async function bidOnListing(id, data) {
   });
 
   if (response.ok) {
-    alert("You placed a bid on this listing"); // replace with user-friendly displayed message
+    return response;
   } else {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to place bid on listing");
+    await handleErrors(response);
   }
 }

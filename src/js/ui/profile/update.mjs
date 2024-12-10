@@ -1,6 +1,11 @@
 import { updateProfile } from "../../api/profile/update.mjs";
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 import { setSingleUrlAsObject } from "../../utilities/setSingleUrlAsObject.mjs";
+import {
+  displayErrorMessage,
+  displaySuccessMessage,
+} from "../components/displayMessageToUser/displayMessage.mjs";
+import { router } from "../../router/router.mjs";
 
 export async function onUpdateProfile(event) {
   event.preventDefault();
@@ -18,5 +23,14 @@ export async function onUpdateProfile(event) {
   };
 
   const user = loggedInUser();
-  updateProfile(user.name, profileData);
+
+  try {
+    await updateProfile(user.name, profileData);
+    displaySuccessMessage("Profile was updated.");
+    setTimeout(function () {
+      router.route("/my-profile/read");
+    }, 2000);
+  } catch (error) {
+    displayErrorMessage(error);
+  }
 }
