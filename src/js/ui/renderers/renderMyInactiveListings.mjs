@@ -13,6 +13,12 @@ export async function renderMyInactiveListings() {
     "my-inactive-listings"
   );
 
+  if (listings.length === 0) {
+    myInactiveListingsContainer.innerHTML =
+      "<p>You have no inactive listings at the moment.</p>";
+    return;
+  }
+
   listingElements.forEach((listingElement) => {
     const card = document.createElement("div");
 

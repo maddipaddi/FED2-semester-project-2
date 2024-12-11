@@ -12,6 +12,12 @@ export async function renderWinsByProfile() {
     "listings-won-container"
   );
 
+  if (wins.length === 0) {
+    listingsWonContainer.innerHTML =
+      "<p>You have not won any listings yet.</p>";
+    return;
+  }
+
   listingElements.forEach((listingElement) => {
     const card = document.createElement("div");
 

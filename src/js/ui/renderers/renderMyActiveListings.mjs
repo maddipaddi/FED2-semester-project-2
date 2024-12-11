@@ -10,6 +10,12 @@ export async function renderMyActiveListings() {
   const myActiveListingsContainer =
     document.getElementById("my-active-listings");
 
+  if (listings.length === 0) {
+    myActiveListingsContainer.innerHTML =
+      "<p>You have no active listings at the moment.</p>";
+    return;
+  }
+
   listingElements.forEach((listingElement) => {
     const card = document.createElement("div");
 
