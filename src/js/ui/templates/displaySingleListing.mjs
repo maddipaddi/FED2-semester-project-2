@@ -45,6 +45,10 @@ export async function displaySingleListing(listing) {
     );
     const sellerName = `${listing.seller.name}`;
     sellerNameContainer.innerText = sellerName;
+    sellerNameContainer.setAttribute(
+      "href",
+      `/profile/read?user=${sellerName}`
+    );
 
     const sellerListings = document.getElementById("seller-listings");
     const sellerTotalListingsArray = await fetchListingsByProfile(sellerName);
