@@ -5,6 +5,7 @@ import { splitDescription } from "../../utilities/splitListingDescription.mjs";
 import { fetchListingsByProfile } from "../../api/listing/read.mjs";
 import { readListingsByProfileActive } from "../listing/read.mjs";
 import { initializeWishlistButton } from "../components/wishlist/wishlistBtn.mjs";
+import { listingImages } from "../../utilities/displayAllImagesOnSingleListing.mjs";
 
 export async function displaySingleListing(listing) {
   const title = document.getElementById("title");
@@ -16,24 +17,7 @@ export async function displaySingleListing(listing) {
   );
   smallDescription.innerText = firstSentence;
 
-  if (listing.media && listing.media.length > 0) {
-    const mediaContainerMain = document.getElementById("media-container-main");
-    const mediaContainer = document.getElementById("media-container");
-
-    listing.media.forEach((mediaItem, index) => {
-      if (index === 0) {
-        const mediaMain = document.createElement("img");
-        mediaMain.setAttribute("src", mediaItem.url);
-        mediaMain.className = "h-96 w-full object-cover object-center";
-        mediaContainerMain.appendChild(mediaMain);
-      } else {
-        const media = document.createElement("img");
-        media.setAttribute("src", mediaItem.url);
-        media.className = "h-56 w-full object-cover object-center";
-        mediaContainer.append(media);
-      }
-    });
-  }
+  listingImages(listing);
 
   const description = document.getElementById("description");
   description.innerText = remainingText;
