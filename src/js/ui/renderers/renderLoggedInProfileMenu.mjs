@@ -1,6 +1,6 @@
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
-export function renderProfileMenu() {
+export function renderLoggedInProfileMenu() {
   const profileMenu = document.getElementById("profile-menu");
   const user = loggedInUser();
   // Clear existing menu content
@@ -9,7 +9,13 @@ export function renderProfileMenu() {
   if (user) {
     // Logged-in view
     const profileText = document.createElement("p");
-    profileText.classList.add("text-sm", "text-copy", "mb-1", "mt-9", "font-serif"); 
+    profileText.classList.add(
+      "text-sm",
+      "text-copy",
+      "mb-1",
+      "mt-9",
+      "font-serif"
+    );
     profileText.innerText = "Navigate to your profile here:";
 
     const profileLink = document.createElement("a");
@@ -25,15 +31,16 @@ export function renderProfileMenu() {
       "border-copy",
       "dark:border-background",
       "hover:font-bold",
-      "appearance-none", 
-      "text-center", 
+      "appearance-none",
+      "text-center",
       "block"
     );
     profileLink.innerText = "My account";
 
     const logoutText = document.createElement("p");
-    logoutText.classList.add("text-sm", "text-copy", "mb-1", "font-serif"); 
-    logoutText.innerText = "You can log out of your account here, but we hope we'll see you back soon!";
+    logoutText.classList.add("text-sm", "text-copy", "mb-1", "font-serif");
+    logoutText.innerText =
+      "You can log out of your account here, but we hope we'll see you back soon!";
 
     const logoutButton = document.createElement("button");
     logoutButton.innerText = "Logout";
@@ -47,8 +54,8 @@ export function renderProfileMenu() {
       "border-copy",
       "dark:border-background",
       "hover:font-bold",
-      "appearance-none", 
-      "text-center", 
+      "appearance-none",
+      "text-center",
       "block"
     );
     logoutButton.setAttribute("id", "logout-btn");

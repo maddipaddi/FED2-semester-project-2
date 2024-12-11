@@ -1,7 +1,7 @@
 import { fetchSingleProfile } from "../../api/profile/read.mjs";
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
-export async function displayLoggedInProfile() {
+export async function displayLoggedInProfileInfo() {
   const user = loggedInUser();
   const username = user.name;
 
