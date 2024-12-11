@@ -5,7 +5,7 @@ import { toggleWishlist } from "./toggleWishlist.mjs";
 export function initializeWishlistButton(listingId) {
   const currentUser = loggedInUser();
   if (!currentUser) {
-    return; // No user logged in, no need to show wishlist button
+    return;
   }
 
   const wishlistButton = document.getElementById("wishlist-button");
