@@ -6,6 +6,7 @@ import { fetchListingsByProfile } from "../../api/listing/read.mjs";
 import { readListingsByProfileActive } from "../listing/read.mjs";
 import { initializeWishlistButton } from "../components/wishlist/wishlistBtn.mjs";
 import { listingImages } from "../../utilities/displayAllImagesOnSingleListing.mjs";
+import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
 export async function displaySingleListing(listing) {
   const title = document.getElementById("title");
@@ -22,28 +23,41 @@ export async function displaySingleListing(listing) {
   const description = document.getElementById("description");
   description.innerText = remainingText;
 
-  const currentBid = document.getElementById("current-bid");
-  currentBid.innerText = `${getHighestBid(listing.bids)}`;
+  if (loggedInUser()) {
+    const currentBid = document.getElementById("current-bid");
+    currentBid.innerText = `${getHighestBid(listing.bids)}`;
 
-  const bidInput = document.getElementById("amount");
-  bidInput.setAttribute("placeholder", `${getHighestBid(listing.bids)} or up`);
+    const bidInput = document.getElementById("amount");
+    bidInput.setAttribute(
+      "placeholder",
+      `${getHighestBid(listing.bids)} or up`
+    );
 
-  initializeWishlistButton(listing.id);
+    initializeWishlistButton(listing.id);
 
-  const auctionEnd = document.getElementById("auctionEnd");
-  auctionEnd.innerText = `${formatDateWithDayTimeDate(listing.endsAt)}`;
+    const auctionEnd = document.getElementById("auctionEnd");
+    auctionEnd.innerText = `${formatDateWithDayTimeDate(listing.endsAt)}`;
 
-  renderBids(listing.bids);
+    renderBids(listing.bids);
 
-  const sellerNameContainer = document.getElementById("seller-name-container");
-  const sellerName = `${listing.seller.name}`;
-  sellerNameContainer.innerText = sellerName;
+    const sellerNameContainer = document.getElementById(
+      "seller-name-container"
+    );
+    const sellerName = `${listing.seller.name}`;
+    sellerNameContainer.innerText = sellerName;
 
-  const sellerListings = document.getElementById("seller-listings");
-  const sellerTotalListingsArray = await fetchListingsByProfile(sellerName);
+    const sellerListings = document.getElementById("seller-listings");
+    const sellerTotalListingsArray = await fetchListingsByProfile(sellerName);
 
-  const sellerActiveListingsArray =
-    await readListingsByProfileActive(sellerName);
+    const sellerActiveListingsArray =
+      await readListingsByProfileActive(sellerName);
 
-  sellerListings.innerText = `${sellerActiveListingsArray.length} Listings active / ${sellerTotalListingsArray.length} Total listings`;
+    sellerListings.innerText = `${sellerActiveListingsArray.length} Listings active / ${sellerTotalListingsArray.length} Total listings`;
+  } else {
+    const bidsSidebar = document.getElementById("bids-sidebar");
+    bidsSidebar.innerHTML = `<h2 class="text-lg font-semibold mb-4 uppercase">You are not logged in</h2>
+    <p>Create an account and/or log in to see details about the bids on this listing and the seller. You will also be able to place your own bid or add listing to wishlist.</p>`;
+    const sellerSidebar = document.getElementById("seller-sidebar");
+    sellerSidebar.className = "hidden";
+  }
 }
