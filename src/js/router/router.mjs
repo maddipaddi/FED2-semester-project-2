@@ -8,10 +8,6 @@ export function router() {
       template: "/templates/404.html",
       title: "404 | " + pageTitle,
       description: "Page not found.",
-      init: async () => {
-        const { initPageNotFound } = await import("../views/404.mjs");
-        initPageNotFound();
-      },
     },
     "/": {
       template: "/templates/index.html",
@@ -26,28 +22,16 @@ export function router() {
       template: "/templates/about.html",
       title: "About | " + pageTitle,
       description: "Read about Auction House.",
-      init: async () => {
-        const { initAbout } = await import("../views/about.mjs");
-        initAbout();
-      },
     },
     "/contact": {
       template: "/templates/contact.html",
       title: "Contact | " + pageTitle,
       description: "Contact Auction House.",
-      init: async () => {
-        const { initContact } = await import("../views/contact.mjs");
-        initContact();
-      },
     },
     "/FAQ": {
       template: "/templates/faq.html",
       title: "FAQ | " + pageTitle,
       description: "Read answers to frequently asked questions.",
-      init: async () => {
-        const { initFAQ } = await import("../views/FAQ.mjs");
-        initFAQ();
-      },
     },
     "/terms": {
       template: "/templates/terms.html",

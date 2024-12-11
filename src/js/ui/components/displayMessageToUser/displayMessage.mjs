@@ -1,4 +1,4 @@
-import { dismissMsgBtnListener } from "../../../listeners/dismissMsgBtn.mjs";
+import { dismissMsgBtnListener } from "../../../listeners/dismissMsgBtnListener.mjs";
 
 export function displaySuccessMessage(successMsg) {
   const messageContainer = document.getElementById("user-message-container");

@@ -12,6 +12,12 @@ export async function renderBidsWithListingsByProfile() {
     "active-bids-container"
   );
 
+  if (bids.length === 0) {
+    myActiveListingsContainer.innerHTML =
+      "<p>You have no bids on active listings at the moment.</p>";
+    return;
+  }
+
   listingElements.forEach((listingElement) => {
     const card = document.createElement("div");
 
