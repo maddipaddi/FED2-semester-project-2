@@ -36,8 +36,11 @@ export async function readListingsByProfileActive(name) {
 }
 
 export async function readListingsByProfileInactive(name) {
+  const options = {
+    _bids: true,
+  };
   try {
-    const listings = await fetchListingsByProfile(name);
+    const listings = await fetchListingsByProfile(name, options);
     return inactiveListings(listings);
   } catch (error) {
     displayErrorMessage(error);
