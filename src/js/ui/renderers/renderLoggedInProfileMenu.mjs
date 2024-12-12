@@ -14,7 +14,8 @@ export function renderLoggedInProfileMenu() {
       "text-copy",
       "mb-1",
       "mt-9",
-      "font-serif"
+      "font-serif",
+      "dark:text-background"
     );
     profileText.innerText = "Navigate to your profile here:";
 
@@ -38,7 +39,13 @@ export function renderLoggedInProfileMenu() {
     profileLink.innerText = "My account";
 
     const logoutText = document.createElement("p");
-    logoutText.classList.add("text-sm", "text-copy", "mb-1", "font-serif");
+    logoutText.classList.add(
+      "text-sm",
+      "text-copy",
+      "mb-1",
+      "font-serif",
+      "dark:text-background"
+    );
     logoutText.innerText =
       "You can log out of your account here, but we hope we'll see you back soon!";
 
