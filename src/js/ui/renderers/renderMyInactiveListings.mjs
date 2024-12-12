@@ -5,7 +5,6 @@ import { displayMyInactiveListings } from "../templates/displayMyInactiveListing
 export async function renderMyInactiveListings() {
   const user = loggedInUser();
   const listings = await readListingsByProfileInactive(user.name);
-  console.log(listings);
 
   const listingElements = displayMyInactiveListings(listings);
 
