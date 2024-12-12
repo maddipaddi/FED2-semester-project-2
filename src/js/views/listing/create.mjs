@@ -1,5 +1,7 @@
 import { createListingListener } from "../../listeners/createListingListener.mjs";
+import { authGuard } from "../../utilities/authGuard.mjs";
 
-export function initCreate () {
-    createListingListener();
-};
+export async function initCreate() {
+  await authGuard();
+  createListingListener();
+}

@@ -21,112 +21,112 @@
     </button>
   </div>
 </div>
-<div class="w-full bg-background relative h-48 mt-9">
-  <img
-    id="profile-banner"
-    src=""
-    alt="Profile Banner"
-    class="w-full h-full object-cover"
-  />
-</div>
-
-<div
-  class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6"
->
-  <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
+<div id="content">
+  <div class="w-full bg-background relative h-48 mt-9">
     <img
-      id="profile-img"
+      id="profile-banner"
       src=""
-      alt="Profile Picture"
+      alt="Profile Banner"
       class="w-full h-full object-cover"
     />
   </div>
-
-  <div class="flex-1 text-center mt-6 md:mt-12 md:text-left">
-    <h1 id="profilename" class="text-2xl font-bold uppercase font-serif">
-      USERNAME
-    </h1>
-    <p id="profile-bio" class="text-copy dark:text-background">
-      Here is a funny bio about the user
-    </p>
-  </div>
-
   <div
-    class="flex flex-col space-y-4 mt-6 md:mt-12 md:flex-row md:space-x-4 md:space-y-0"
+    class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6"
   >
-    <span
-      id="profile-credits"
-      class="bg-accent text-white px-3 py-1 rounded text-sm border dark:border-background text-center"
-    >
-      BALANCE: $753
-    </span>
-    <a
-      href="/my-profile/update"
-      class="bg-primary text-white px-4 py-1 rounded text-sm border dark:border-background text-center"
-    >
-      UPDATE PROFILE
-    </a>
-  </div>
-</div>
+    <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
+      <img
+        id="profile-img"
+        src=""
+        alt="Profile Picture"
+        class="w-full h-full object-cover"
+      />
+    </div>
 
-<div class="mt-9 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-  <div class="flex flex-col items-center sm:items-start">
-    <h2
-      class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
-    >
-      My listings
-    </h2>
-    <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
-      <li>
-        <a
-          href="/listing/create"
-          class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-        >
-          Add new listing
-        </a>
-      </li>
-      <li>
-        <a
-          href="/my-listings/active"
-          class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-        >
-          My active listings
-        </a>
-      </li>
-      <li>
-        <a
-          href="/my-listings/inactive"
-          class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-        >
-          My previous listings
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div class="flex-1 text-center mt-6 md:mt-12 md:text-left">
+      <h1 id="profilename" class="text-2xl font-bold uppercase font-serif">
+        USERNAME
+      </h1>
+      <p id="profile-bio" class="text-copy dark:text-background">
+        Here is a funny bio about the user
+      </p>
+    </div>
 
-  <div class="flex flex-col items-center sm:items-start">
-    <h2
-      class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
+    <div
+      class="flex flex-col space-y-4 mt-6 md:mt-12 md:flex-row md:space-x-4 md:space-y-0"
     >
-      Activity on other listings
-    </h2>
-    <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
-      <li>
-        <a
-          href="/my-activity-on-listings/wishlist-and-active-bids"
-          class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-        >
-          Wishlist & Active bids
-        </a>
-      </li>
-      <li>
-        <a
-          href="/my-activity-on-listings/bid-history"
-          class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-        >
-          Bid history
-        </a>
-      </li>
-    </ul>
+      <span
+        id="profile-credits"
+        class="bg-accent text-white px-3 py-1 rounded text-sm border dark:border-background text-center"
+      >
+        BALANCE: $753
+      </span>
+      <a
+        href="/my-profile/update"
+        class="bg-primary text-white px-4 py-1 rounded text-sm border dark:border-background text-center"
+      >
+        UPDATE PROFILE
+      </a>
+    </div>
+  </div>
+  <div class="mt-9 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div class="flex flex-col items-center sm:items-start">
+      <h2
+        class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
+      >
+        My listings
+      </h2>
+      <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
+        <li>
+          <a
+            href="/listing/create"
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
+          >
+            Add new listing
+          </a>
+        </li>
+        <li>
+          <a
+            href="/my-listings/active"
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
+          >
+            My active listings
+          </a>
+        </li>
+        <li>
+          <a
+            href="/my-listings/inactive"
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
+          >
+            My previous listings
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col items-center sm:items-start">
+      <h2
+        class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
+      >
+        Activity on other listings
+      </h2>
+      <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
+        <li>
+          <a
+            href="/my-activity-on-listings/wishlist-and-active-bids"
+            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
+          >
+            Wishlist & Active bids
+          </a>
+        </li>
+        <li>
+          <a
+            href="/my-activity-on-listings/bid-history"
+            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
+          >
+            Bid history
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

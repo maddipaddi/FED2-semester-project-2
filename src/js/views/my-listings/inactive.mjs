@@ -1,5 +1,7 @@
 import { renderMyInactiveListings } from "../../ui/renderers/renderMyInactiveListings.mjs";
+import { authGuard } from "../../utilities/authGuard.mjs";
 
-export function initInactive() {
+export async function initInactive() {
+  await authGuard();
   renderMyInactiveListings();
 }
