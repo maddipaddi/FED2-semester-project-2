@@ -1,7 +1,7 @@
 import { updateProfileListener } from "../../listeners/updateprofileListener.mjs";
-import { displayLoggedInProfile } from "../../ui/templates/displayLoggedInProfile.mjs";
+import { displayLoggedInProfileInfo } from "../../ui/templates/displayLoggedInProfileInfo.mjs";
 
 export function initUpdateProfile() {
-  displayLoggedInProfile();
+  displayLoggedInProfileInfo();
   updateProfileListener();
 }

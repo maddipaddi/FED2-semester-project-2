@@ -1,5 +1,5 @@
-import { displayLoggedInProfile } from "../../ui/templates/displayLoggedInProfile.mjs";
+import { displayLoggedInProfileInfo } from "../../ui/templates/displayLoggedInProfileInfo.mjs";
 
 export function initReadMyProfile() {
-  displayLoggedInProfile();
+  displayLoggedInProfileInfo();
 }

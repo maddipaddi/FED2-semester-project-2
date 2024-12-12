@@ -1,5 +1,5 @@
 import { router } from "./js/router/router.mjs";
-import { renderProfileMenu } from "./js/ui/renderers/renderProfileMenu.mjs";
+import { renderLoggedInProfileMenu } from "./js/ui/renderers/renderLoggedInProfileMenu.mjs";
 import { initLogin } from "./js/listeners/loginFormListener.mjs";
 import { logoutListener } from "./js/listeners/logoutListener.mjs";
 import { applyTheme } from "./js/ui/components/theme/applyTheme.mjs";
@@ -9,7 +9,7 @@ import "./input.css";
 
 function init() {
   router();
-  renderProfileMenu();
+  renderLoggedInProfileMenu();
   initLogin();
   logoutListener();
   applyTheme();

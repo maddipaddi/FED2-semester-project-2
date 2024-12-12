@@ -1,9 +1,8 @@
 import { fetchSingleProfile } from "../../api/profile/read.mjs";
-import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
-export async function displayLoggedInProfile() {
-  const user = loggedInUser();
-  const username = user.name;
+export const displayProfileInfo = async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get("user");
 
   const profile = await fetchSingleProfile(username);
 
@@ -19,14 +18,9 @@ export async function displayLoggedInProfile() {
   const profileBio = document.getElementById("profile-bio");
   if (profileBio) {
     if (!profile.bio) {
-      profileBio.innerText = "Update your profile to display your bio here";
+      profileBio.innerText = "";
     } else {
       profileBio.innerText = `${profile.bio}`;
     }
   }
-
-  const profileCredits = document.getElementById("profile-credits");
-  if (profileCredits) {
-    profileCredits.innerText = `Balance: $${profile.credits}`;
-  }
-}
+};

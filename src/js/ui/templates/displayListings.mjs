@@ -41,7 +41,8 @@ export function displayListings(listings) {
       "mb-2"
     );
 
-    const seller = document.createElement("p");
+    const seller = document.createElement("a");
+    seller.setAttribute("href", `/profile/read?user=${listing.seller.name}`);
     seller.classList.add("text-sm", "font-medium", "text-gray-700");
     seller.innerText = `${listing.seller.name}`;
 
