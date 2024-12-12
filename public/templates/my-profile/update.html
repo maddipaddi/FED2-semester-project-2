@@ -21,86 +21,85 @@
     </button>
   </div>
 </div>
-
-<div class="w-full bg-background relative h-48 mt-9">
-  <img
-    id="profile-banner"
-    src=""
-    alt="Profile Banner"
-    class="w-full h-full object-cover"
-  />
-</div>
-
-<div
-  class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6"
->
-  <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
+<div id="content">
+  <div class="w-full bg-background relative h-48 mt-9">
     <img
-      id="profile-img"
+      id="profile-banner"
       src=""
-      alt="Profile Picture"
+      alt="Profile Banner"
       class="w-full h-full object-cover"
     />
   </div>
-
-  <div class="flex-1 text-center mt-6 md:mt-12 md:text-left">
-    <h1 id="profilename" class="text-2xl font-bold uppercase font-serif">
-      USERNAME
-    </h1>
-  </div>
-</div>
-
-<div
-  class="flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 sm:space-x-6 px-4 sm:px-10 py-10 mt-6"
->
-  <form
-    name="updateProfile"
-    class="bg-accent text-white p-6 rounded shadow-md w-full sm:w-1/2"
-  >
-    <label for="img" class="block text-sm font-semibold mb-2">
-      Profile picture
-    </label>
-    <input
-      type="url"
-      name="img"
-      id="img"
-      placeholder="Type url here..."
-      class="w-full p-2 mb-4 rounded border border-gray-300 text-black"
-    />
-
-    <label for="banner" class="block text-sm font-semibold mb-2">
-      Banner
-    </label>
-    <input
-      type="url"
-      name="banner"
-      id="banner"
-      placeholder="Type url here..."
-      class="w-full p-2 mb-4 rounded border border-gray-300 text-black"
-    />
-
-    <label for="bio" class="block text-sm font-semibold mb-2">Bio</label>
-    <textarea
-      name="bio"
-      id="bio"
-      class="w-full p-2 mb-4 h-24 rounded border border-gray-300 text-black"
-      placeholder="Something fancy"
-    ></textarea>
-
-    <button
-      type="submit"
-      class="w-full bg-accent text-white py-2 px-4 rounded hover:font-bold border border-background"
-    >
-      Update profile
-    </button>
-  </form>
-
   <div
-    class="bg-secondary text-background border border-black dark:border-background p-6 rounded shadow-md w-full sm:w-1/2 flex items-center justify-center h-52"
+    class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6"
   >
-    <quote class="text-center italic">
-      "In moments of doubt, remember that being yourself is your greatest
-      power."
-    </quote>
+    <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
+      <img
+        id="profile-img"
+        src=""
+        alt="Profile Picture"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="flex-1 text-center mt-6 md:mt-12 md:text-left">
+      <h1 id="profilename" class="text-2xl font-bold uppercase font-serif">
+        USERNAME
+      </h1>
+    </div>
+  </div>
+  <div
+    class="flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 sm:space-x-6 px-4 sm:px-10 py-10 mt-6"
+  >
+    <form
+      name="updateProfile"
+      class="bg-accent text-white p-6 rounded shadow-md w-full sm:w-1/2"
+    >
+      <label for="img" class="block text-sm font-semibold mb-2">
+        Profile picture
+      </label>
+      <input
+        type="url"
+        name="img"
+        id="img"
+        placeholder="Type url here..."
+        class="w-full p-2 mb-4 rounded border border-gray-300 text-black"
+      />
+
+      <label for="banner" class="block text-sm font-semibold mb-2">
+        Banner
+      </label>
+      <input
+        type="url"
+        name="banner"
+        id="banner"
+        placeholder="Type url here..."
+        class="w-full p-2 mb-4 rounded border border-gray-300 text-black"
+      />
+
+      <label for="bio" class="block text-sm font-semibold mb-2">Bio</label>
+      <textarea
+        name="bio"
+        id="bio"
+        class="w-full p-2 mb-4 h-24 rounded border border-gray-300 text-black"
+        placeholder="Something fancy"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="w-full bg-accent text-white py-2 px-4 rounded hover:font-bold border border-background"
+      >
+        Update profile
+      </button>
+    </form>
+
+    <div
+      class="bg-secondary text-background border border-black dark:border-background p-6 rounded shadow-md w-full sm:w-1/2 flex items-center justify-center h-52"
+    >
+      <quote class="text-center italic">
+        "In moments of doubt, remember that being yourself is your greatest
+        power."
+      </quote>
+    </div>
   </div>
 </div>
