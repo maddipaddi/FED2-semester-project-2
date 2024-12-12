@@ -1,5 +1,7 @@
 import { renderMyActiveListings } from "../../ui/renderers/renderMyActiveListings.mjs";
+import { authGuard } from "../../utilities/authGuard.mjs";
 
-export function initActive() {
+export async function initActive() {
+  await authGuard();
   renderMyActiveListings();
 }

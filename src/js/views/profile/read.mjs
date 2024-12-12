@@ -1,5 +1,7 @@
 import { renderOtherProfilesPage } from "../../ui/renderers/renderOtherProfilesPage.mjs";
+import { authGuard } from "../../utilities/authGuard.mjs";
 
-export function initReadProfile() {
+export async function initReadProfile() {
+  await authGuard();
   renderOtherProfilesPage();
 }

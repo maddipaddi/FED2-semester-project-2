@@ -1,5 +1,7 @@
 import { displayLoggedInProfileInfo } from "../../ui/templates/displayLoggedInProfileInfo.mjs";
+import { authGuard } from "../../utilities/authGuard.mjs";
 
-export function initReadMyProfile() {
+export async function initReadMyProfile() {
+  await authGuard();
   displayLoggedInProfileInfo();
 }
