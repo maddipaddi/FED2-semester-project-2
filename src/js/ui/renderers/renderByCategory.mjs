@@ -8,9 +8,9 @@ export async function renderListingsByCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category");
   if (category) {
-  const categoryTitle = document.getElementById("categoryTitle");
-  categoryTitle.innerText = `Luxury ${category}`;
-}
+    const categoryTitle = document.getElementById("categoryTitle");
+    categoryTitle.innerText = `Luxury ${category}`;
+  }
 
   const categoryContainer = document.getElementById("categoryContainer");
 
