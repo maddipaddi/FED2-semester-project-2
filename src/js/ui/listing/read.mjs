@@ -6,6 +6,24 @@ import {
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
 
+export async function readAllListings(page = 1) {
+  const options = {
+    _active: true,
+    _bids: true,
+    _seller: true,
+    _tag: "luxuryauctionhouse",
+    limit: 12,
+    page: page,
+  };
+  try {
+    // Fetch listings based on the category
+    const { listings, meta } = await fetchListings(options);
+    return { listings, meta };
+  } catch (error) {
+    displayErrorMessage(error);
+  }
+}
+
 export async function readListingsByCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category");

@@ -1,5 +1,8 @@
 import { displayCarousel } from "../ui/components/displayCarousel/displayCarousel.mjs";
+import { renderAllListings } from "../ui/renderers/renderAllListings.mjs";
 
-export function initHome() {
+export async function initHome() {
   displayCarousel();
+
+  renderAllListings();
 }

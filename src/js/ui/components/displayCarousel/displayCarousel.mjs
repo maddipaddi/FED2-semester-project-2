@@ -8,12 +8,14 @@ export async function displayCarousel() {
   let currentIndex = 0;
 
   // Fetch the newest listings (limit 4)
-  const listings = await fetchListings({
+  const data = await fetchListings({
     sort: "created",
     sortOrder: "desc",
     limit: 4,
     _tag: "luxuryauctionhouse",
   });
+
+  const listings = data.listings;
 
   // Populate the carousel with listings
   listings.forEach((listing) => {

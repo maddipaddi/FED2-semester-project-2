@@ -52,7 +52,7 @@
     </button>
   </div>
 </div>
-<div>
+<section>
   <h2 class="text-2xl mb-6 font-serif uppercase ml-5">
     Your daily discoveries
   </h2>
@@ -100,8 +100,14 @@
       </a>
     </li>
   </ul>
-</div>
-<div>
+</section>
+<section>
   <h2 class="text-2xl mb-6 font-serif uppercase ml-5">View all listings</h2>
-  <div id="allListings"></div>
-</div>
+  <div
+    id="all-listings"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  ></div>
+  <nav aria-label="pagination" class="flex justify-center">
+    <ul id="pagination-controls" class="flex list-none m-4"></ul>
+  </nav>
+</section>
