@@ -6,17 +6,36 @@ import {
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
 
+export async function readAllListings(page = 1) {
+  const options = {
+    _active: true,
+    _bids: true,
+    _seller: true,
+    _tag: "luxuryauctionhouse",
+    limit: 12,
+    page: page,
+  };
+  try {
+    // Fetch listings based on the category
+    const { listings, meta } = await fetchListings(options);
+    return { listings, meta };
+  } catch (error) {
+    displayErrorMessage(error);
+  }
+}
+
 export async function readListingsByCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category");
   const options = {
+    _active: true,
     _tag: category,
     _bids: true,
     _seller: true,
   };
   try {
     // Fetch listings based on the category
-    const listings = await fetchListings(options);
+    const { listings, meta } = await fetchListings(options);
     return listings;
   } catch (error) {
     displayErrorMessage(error);
@@ -36,8 +55,11 @@ export async function readListingsByProfileActive(name) {
 }
 
 export async function readListingsByProfileInactive(name) {
+  const options = {
+    _bids: true,
+  };
   try {
-    const listings = await fetchListingsByProfile(name);
+    const listings = await fetchListingsByProfile(name, options);
     return inactiveListings(listings);
   } catch (error) {
     displayErrorMessage(error);

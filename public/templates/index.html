@@ -28,10 +28,31 @@
       Bid on high-quality, one-of-a-kind finds in this exceptional selection of
       special objects.
     </p>
-    <p>Explore now</p>
+    <p>Explore now ---></p>
+  </div>
+  <!-- Carousel Container -->
+  <div class="relative overflow-hidden w-full max-w-4xl mx-auto mt-6">
+    <div
+      id="carousel-slides"
+      class="flex transition-transform duration-500"
+    ></div>
+
+    <!-- Navigation Buttons -->
+    <button
+      id="prevButton"
+      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-primary p-2 rounded-full shadow-lg hover:bg-gray-200 focus:outline-none"
+    >
+      &#10094;
+    </button>
+    <button
+      id="nextButton"
+      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-primary p-2 rounded-full shadow-lg hover:bg-gray-200 focus:outline-none"
+    >
+      &#10095;
+    </button>
   </div>
 </div>
-<div>
+<section>
   <h2 class="text-2xl mb-6 font-serif uppercase ml-5">
     Your daily discoveries
   </h2>
@@ -79,8 +100,14 @@
       </a>
     </li>
   </ul>
-</div>
-<div>
+</section>
+<section>
   <h2 class="text-2xl mb-6 font-serif uppercase ml-5">View all listings</h2>
-  <div id="allListings"></div>
-</div>
+  <div
+    id="all-listings"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  ></div>
+  <nav aria-label="pagination" class="flex justify-center">
+    <ul id="pagination-controls" class="flex list-none m-4"></ul>
+  </nav>
+</section>

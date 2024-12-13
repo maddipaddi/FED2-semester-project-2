@@ -1,3 +1,4 @@
+import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 import { onDeletePost } from "../listing/delete.mjs";
 
 export function displayMyInactiveListings(listings) {
@@ -45,13 +46,11 @@ export function displayMyInactiveListings(listings) {
       "px-4",
       "rounded-t-md",
       "text-center",
-      "hover:font-bold",
       "mb-2"
     );
 
     if (listing.bids && listing.bids.length > 0) {
-      const highestBid = Math.max(...listing.bids.map((bid) => bid.amount));
-      soldFor.innerText = `Sold for: $${highestBid}`;
+      soldFor.innerText = `Sold for: ${getHighestBid(listing.bids)}`;
     } else {
       soldFor.innerText = "Expired: not sold";
     }

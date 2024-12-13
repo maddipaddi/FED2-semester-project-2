@@ -31,7 +31,8 @@ export const fetchListings = async (options = {}) => {
   }
   const data = await response.json();
   const listings = data.data;
-  return listings;
+  const meta = data.meta;
+  return { listings, meta };
 };
 
 export const fetchListingsByProfile = async (name, options = {}) => {
