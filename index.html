@@ -1,79 +1,144 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
-    <meta name="description" content="" />
-    <link href="/output.css" rel="stylesheet">
+    <meta name="description" content=""/>
     <script type="module" src="/src/main.mjs"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
+      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"/>
+    <script
+      src="https://kit.fontawesome.com/86cb2f60ed.js"
+      crossorigin="anonymous">
+    </script>
   </head>
-  <body>
+  <body class="bg-background text-copy dark:bg-copy dark:text-background min-h-screen flex flex-col">
     <header>
-      <nav>
-        <button>Open/close menu</button>
-        <div>
-          <h2>Categories</h2>
-          <ul>
-            <li><a href="">Handbags</a></li>
-            <li><a href="">Bags</a></li>
-            <li><a href="">Jewelry</a></li>
-            <li><a href="">Watches</a></li>
-          </ul>
-          <a href="">Auction ending soon</a>
-          <a href="">New listings</a>
-          <a href="">Sustainability</a>
-          <a href="">Terms</a>
-          <p>Appearance</p>
-          <button>Dark/light mode</button>
-        </div>
-        <form role="search">
-          <input type="search" placeholder="Search..." aria-label="Search" />
-          <button type="submit">Search</button>
-        </form>
-        <a href="/">
-          <img id="logo" src="" alt="logo" />
-        </a>
-        <button>Profile</button>
-        <div>
-          <div>
-            <h2>I already have an account</h2>
-            <form name="login">
-              <div>
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" required />
+      <nav class="container mx-auto flex items-center justify-between py-4">
+        <div class="flex items-center space-x-4">
+          <button
+            id="open-menu-left"
+            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer">
+            <i class="fa-solid fa-bars size-4 sm:size-5"></i>
+          </button>
+
+          <div class="relative">
+            <button id="search-icon" class="text-copy dark:text-background">
+              <i class="fa-solid fa-magnifying-glass size-4 sm:size-5"></i>
+            </button>
+
+            <div
+              id="search-bar-container"
+              class="absolute left-0 top-full mt-2 hidden pt-3 z-10">
+              <div class="flex items-center border border-copy bg-background rounded dark:bg-copy dark:border-background">
+                <input
+                  id="search-input"
+                  type="text"
+                  placeholder="Search..."
+                  class="px-4 py-2 bg-transparent text-copy dark:text-background focus:outline-none md:w-72 sm:w-44 w-28"/>
+                <button
+                  id="close-search"
+                  class="px-4 text-copy dark:text-background">
+                  <i class="fa-solid fa-times"></i>
+                </button>
               </div>
-              <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required />
-              </div>
-              <button>Sign in</button>
-            </form>
-          </div>
-          <div>
-            <h2>I don't have an account</h2>
-            <p>
-              Enjoy added benefits and a richer experience by creating a
-              personal account
-            </p>
-            <a href="/account/register">Create my account</a>
+            </div>
           </div>
         </div>
-        <a href="">Heart</a>
+
+        <div class="text-center">
+          <a href="/">
+            <img
+              id="logo"
+              src="/assets/AH-logo-light.png"
+              alt="logo"
+              class="h-10 sm:h-12 md:h-14"/>
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a
+            href="/my-activity-on-listings/wishlist-and-active-bids"
+            class="text-copy dark:text-background">
+            <i class="fa-regular fa-heart size-4 sm:size-5"></i>
+          </a>
+
+          <button
+            id="open-menu-right"
+            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer">
+            <i class="fa-regular fa-user size-4 sm:size-5"></i>
+          </button>
+        </div>
       </nav>
     </header>
-    <main>
-      <div id="app"></div>
+
+    <div
+      id="menu-left"
+      class="fixed top-0 left-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform -translate-x-full transition-transform duration-300 z-40 shadow-md">
+      <div class="p-4">
+        <h5 class="mb-4 text-lg font-bold font-serif uppercase">Categories</h5>
+        <button
+          id="close-menu-left"
+          class="absolute top-2 right-2 bg-transparent border-none cursor-pointer text-lg">
+          <i class="fa-solid fa-x"></i>
+        </button>
+        <ul class="mb-4 mt-8 text-lg text-copy dark:text-background font-sans space-y-2">
+          <li><a href="/listings/read?category=handbags">Handbags</a></li>
+          <li><a href="/listings/read?category=bags">Bags</a></li>
+          <li><a href="/listings/read?category=jewelry">Jewelry</a></li>
+          <li><a href="/listings/read?category=watches">Watches</a></li>
+        </ul>
+        <ul class="mb-4 mt-16 text-base text-copy dark:text-background font-sans space-y-2">
+          <li><a href="/sustainability">Sustainability</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+
+        <p class="mt-8 font-sans text-copy dark:text-background">Appearance</p>
+        <button
+          id="theme-toggle"
+          class="bg-accent text-background dark:bg-accent dark:text-background font-medium py-2 px-4 rounded w-full border border-transparent dark:border-white hover:font-bold">
+          Dark mode/light mode
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="menu-right"
+      class="fixed top-0 right-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform translate-x-full transition-transform duration-300 z-40 shadow-md">
+      <div class="p-4">
+        <button
+          id="close-menu-right"
+          class="absolute top-2 left-2 bg-transparent border-none cursor-pointer text-lg">
+          <i class="fa-solid fa-x"></i>
+        </button>
+        <div id="profile-menu"></div>
+      </div>
+    </div>
+
+    <main class="flex-grow relative">
+      <div
+        id="loading-spinner"
+        class="hidden fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center z-50"
+      >
+        <div
+          class="w-12 h-12 bg-primary transform rotate-45 animate-pulse"
+        ></div>
+      </div>
+      <div id="app" class="container mx-auto py-8 mt-9"></div>
     </main>
+
     <footer>
-      <div>
+      <div class="bg-primary text-white font-sans h-24 flex justify-evenly w-full flex-wrap gap-4 items-center">
         <a href="/about">About Auction House</a>
         <a href="/contact">Contact</a>
         <a href="/FAQ">FAQ</a>
