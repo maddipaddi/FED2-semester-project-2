@@ -43,7 +43,7 @@ export function displayListings(listings) {
 
     const seller = document.createElement("a");
     seller.setAttribute("href", `/profile/read?user=${listing.seller.name}`);
-    seller.classList.add("text-sm", "font-medium", "text-gray-700");
+    seller.classList.add("text-sm", "font-medium", "text-gray-700", "hover:font-bold");
     seller.innerText = `${listing.seller.name}`;
 
     const endingDate = document.createElement("p");
