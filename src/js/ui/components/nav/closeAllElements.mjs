@@ -8,6 +8,7 @@ export function closeAllElements() {
 
     const searchBarContainer = document.getElementById("search-bar-container");
     const searchIcon = document.getElementById("search-icon");
+    const searchInput = document.getElementById("search-input");
 
     if (
       !menuLeft.contains(event.target) &&
@@ -29,6 +30,7 @@ export function closeAllElements() {
       !searchIcon.contains(event.target)
     ) {
       searchBarContainer.classList.add("hidden");
+      searchInput.value = "";
     }
   });
 }

@@ -8,11 +8,11 @@ export async function renderListingsByCategory() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category");
   if (category) {
-    const categoryTitle = document.getElementById("categoryTitle");
+    const categoryTitle = document.getElementById("title");
     categoryTitle.innerText = `Luxury ${category}`;
   }
 
-  const categoryContainer = document.getElementById("categoryContainer");
+  const categoryContainer = document.getElementById("container");
 
   listingElements.forEach((listingElement) => {
     const card = document.createElement("div");
