@@ -6,6 +6,10 @@ import {
   displaySuccessMessage,
 } from "../components/displayMessageToUser/displayMessage.mjs";
 import { router } from "../../router/router.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function onUpdateProfile(event) {
   event.preventDefault();
@@ -25,6 +29,7 @@ export async function onUpdateProfile(event) {
   const user = loggedInUser();
 
   try {
+    showSpinner();
     await updateProfile(user.name, profileData);
     displaySuccessMessage("Profile was updated.");
     setTimeout(function () {
@@ -32,5 +37,7 @@ export async function onUpdateProfile(event) {
     }, 2000);
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }

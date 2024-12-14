@@ -4,6 +4,10 @@ import {
   displayErrorMessage,
   displaySuccessMessage,
 } from "../components/displayMessageToUser/displayMessage.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function onBidPlaced(event) {
   event.preventDefault();
@@ -18,11 +22,13 @@ export async function onBidPlaced(event) {
   const id = findId();
 
   try {
+    showSpinner();
     await bidOnListing(id, bidData);
     displaySuccessMessage("You have placed a bid on this listing.");
   } catch (error) {
     displayErrorMessage(error);
   } finally {
+    hideSpinner();
     setTimeout(function () {
       location.reload();
     }, 3000);
