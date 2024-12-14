@@ -11,7 +11,7 @@ export async function renderAllListings(page = 1) {
   try {
     const { listings, meta } = await readAllListings(page);
 
-    // Clear previous listings
+    // Clear previous listings, but preserve container classes
     const container = document.getElementById("all-listings");
     container.innerHTML = "";
 
@@ -19,6 +19,7 @@ export async function renderAllListings(page = 1) {
     const listingElements = displayListings(listings);
     listingElements.forEach((listingElement) => {
       const card = document.createElement("div");
+      card.className = "rounded-md shadow-md p-4 bg-white";
       card.appendChild(listingElement);
       container.appendChild(card);
     });
