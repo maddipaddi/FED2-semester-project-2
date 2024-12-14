@@ -27,7 +27,7 @@ export function displayErrorMessage(responseError = {}, customMessage = "") {
   // Define default messages for specific status codes
   const statusMessages = {
     400: "Bad Request: Please check your input and try again.",
-    401: "Invalid email or password.",
+    401: "Unauthorized: Please log in to continue.",
     403: "Forbidden: You are not allowed to perform this action.",
     404: "Resource not found: The requested item doesn't exist.",
     500: "Internal Server Error: Something went wrong on our side.",

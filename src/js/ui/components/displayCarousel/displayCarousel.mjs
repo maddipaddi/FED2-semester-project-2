@@ -12,6 +12,7 @@ export async function displayCarousel() {
     sort: "created",
     sortOrder: "desc",
     limit: 4,
+    _active: true,
     _tag: "luxuryauctionhouse",
   });
 
