@@ -51,7 +51,8 @@ export function displayBidsWithListingsByProfile(bids) {
       "px-4", 
       "rounded-t-md", 
       "text-center", 
-      "mb-2" 
+      "mb-2",
+      "h-16" 
     );
     auctionEnd.innerText = `Ending: ${formatDateWithDayTimeDate(listing.endsAt)}`;
 

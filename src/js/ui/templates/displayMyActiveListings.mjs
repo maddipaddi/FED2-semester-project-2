@@ -19,11 +19,14 @@ export function displayMyActiveListings(listings) {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
-      "w-full",
-      "h-52",
-      "bg-gray-200",
-      "rounded-md",
-      "overflow-hidden",
+      "flex",            
+      "justify-center",  
+      "items-center",    
+      "w-full",          
+      "h-52",           
+      "bg-gray-200",     
+      "rounded-md",      
+      "overflow-hidden", 
       "mb-4"
     );
 
