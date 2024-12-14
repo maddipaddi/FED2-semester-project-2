@@ -14,61 +14,58 @@
       ></h2>
       <p
         id="message-description"
-        class="text-center text-copy text-base leading-relaxed"
-      ></p>
+        class="text-center text-copy text-base leading-relaxed"></p>
       <button
         id="dismiss-btn"
-        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
-      >
+        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold">
         Dismiss
       </button>
     </div>
   </div>
   <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div id="main-content" class="md:col-span-2">
-        <h1 id="title" class="text-2xl font-serif mb-2"></h1>
-        <p
-          id="small-description"
-          class="text-sm text-copy dark:text-background mb-4"
-        >
+        <h1 id="title" class="text-2xl font-serif mb-2 flex justify-center"></h1>
+        <p id="small-description" class="text-sm text-copy dark:text-background mb-4 flex justify-center">
           Small description
         </p>
         <div id="media-container-main" class="main-image mb-4"></div>
-        <div id="media-container" class="grid grid-cols-2 gap-4 mb-6"></div>
-        <div id="description" class="description">
-          <p class="text-sm text-copy dark:text-background"></p>
+        <div id="media-container" class="flex flex-wrap md:flex-nowrap md:gap-4 justify-center mb-6"></div>
+        <div id="description" class="description flex justify-center">
+          <p class="text-sm text-copy dark:text-background flex justify-center"></p>
         </div>
       </div>
-
-      <div class="flex flex-col gap-6 mt-20">
+  
+      <!-- Sidebar -->
+      <div class="flex flex-col gap-6 md:mt-20 md:col-span-1">
+        <!-- Current Bid Section -->
         <div class="bg-primary text-white p-6 rounded-md" id="bids-sidebar">
           <h2 class="text-lg font-semibold mb-4 uppercase">Current bid</h2>
           <p id="current-bid" class="text-4xl font-bold mb-6"></p>
-          <form name="placeBid">
-            <div class="mb-4">
-              <input
-                name="amount"
-                id="amount"
-                type="number"
-                class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
-              />
-            </div>
-            <div class="flex gap-4 mb-6">
-              <button
-                type="submit"
-                class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
-              >
-                Place bid
-              </button>
-              <button
-                id="wishlist-button"
-                class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold"
-              >
-                Wishlist
-              </button>
-            </div>
-          </form>
+          <div class="flex flex-col gap-2">
+            <form name="placeBid">
+              <div class="mb-4">
+                <input
+                  name="amount"
+                  id="amount"
+                  type="number"
+                  class="w-full px-4 py-2 rounded border border-gray-300 text-copy"
+                />
+              </div>
+              <div class="flex gap-4">
+                <button
+                  type="submit"
+                  class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold">
+                  Place bid
+                </button>
+              </div>
+            </form>
+            <button
+              id="wishlist-button"
+              class="bg-background text-copy px-4 py-2 rounded w-full hover:font-bold mb-5">
+              Wishlist
+            </button>
+          </div>
           <div class="text-sm mb-6">
             <p class="flex items-center gap-2">
               🕒 Closes:<span id="auctionEnd"></span>
@@ -76,7 +73,8 @@
           </div>
           <div id="bid-list" class="bid-list text-sm"></div>
         </div>
-
+  
+        <!-- Seller Section -->
         <div class="bg-secondary text-white p-6 rounded-md" id="seller-sidebar">
           <h2 class="text-lg font-semibold mb-4 uppercase">Seller</h2>
           <a id="seller-name-container"></a>
@@ -88,4 +86,8 @@
       </div>
     </div>
   </div>
+  </div>
 </body>
+
+
+
