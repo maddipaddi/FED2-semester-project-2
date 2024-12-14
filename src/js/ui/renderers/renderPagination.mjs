@@ -2,9 +2,8 @@ import { renderAllListings } from "../renderers/renderAllListings.mjs";
 
 export async function renderPagination(meta) {
   const paginationControls = document.getElementById("pagination-controls");
+  paginationControls.className = "flex justify-center mt-10"; 
 
-  // Clear previous pagination links
-  paginationControls.innerHTML = "";
 
   // Add "Previous" button
   const prevLi = document.createElement("li");
@@ -13,6 +12,7 @@ export async function renderPagination(meta) {
   prevLink.innerHTML = `&laquo;`;
   if (meta.isFirstPage) {
     prevLink.classList.add("invisible");
+    prevLink.className = "px-3 py-2 bg-primary text-background hover:font-bold rounded-md";
   } else {
     prevLink.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -28,6 +28,7 @@ export async function renderPagination(meta) {
     const pageLink = document.createElement("a");
     pageLink.href = "";
     pageLink.innerHTML = `<span class="invisible">page </span>${i}`;
+    pageLink.className = "hover:font-bold text-copy dark:text-background rounded-md px-3 py-2"
     if (i === meta.currentPage) {
       pageLink.setAttribute("aria-current", "page");
     } else {
@@ -45,6 +46,7 @@ export async function renderPagination(meta) {
   const nextLink = document.createElement("a");
   nextLink.href = "";
   nextLink.innerHTML = `&raquo;`;
+  nextLink.className = "px-3 py-2 ml-9 bg-primary text-background hover:font-bold rounded-md";
   if (meta.isLastPage) {
     nextLink.classList.add("invisible");
   } else {
