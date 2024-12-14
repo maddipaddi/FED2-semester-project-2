@@ -19,7 +19,12 @@ export async function onLogin(event) {
     await login(account);
     displaySuccessMessage("Login successful!");
   } catch (error) {
-    displayErrorMessage(error);
+    if (error.status === 401) {
+      const customMessage = "Invalid email or password";
+      displayErrorMessage({}, customMessage);
+    } else {
+      displayErrorMessage(error);
+    }
   } finally {
     hideSpinner();
     setTimeout(function () {
