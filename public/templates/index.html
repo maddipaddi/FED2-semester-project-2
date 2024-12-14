@@ -21,20 +21,19 @@
     </button>
   </div>
 </div>
-<div class="bg-primary text-background m-5 p-6 text-center">
+<div class="bg-primary text-background p-12 text-center mt-6">
   <div>
-    <h1 class="text-2xl mb-6 font-serif uppercase">Exclusive selection</h1>
-    <p>
+    <h1 class="text-4xl mb-6 font-serif uppercase font-bold">Exclusive selection</h1>
+    <p class="text-xl">
       Bid on high-quality, one-of-a-kind finds in this exceptional selection of
       special objects.
     </p>
-    <p>Explore now ---></p>
   </div>
   <!-- Carousel Container -->
-  <div class="relative overflow-hidden w-full max-w-4xl mx-auto mt-6">
+  <div class="relative overflow-hidden w-full max-w-lg mx-auto mt-6 content-center">
     <div
       id="carousel-slides"
-      class="flex transition-transform duration-500"
+      class="flex transition-transform duration-500 content-center"
     ></div>
 
     <!-- Navigation Buttons -->
@@ -53,12 +52,11 @@
   </div>
 </div>
 <section>
-  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">
+  <h2 class="text-2xl mb-6 mt-14 font-serif uppercase ml-5">
     Your daily discoveries
   </h2>
   <ul
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-5"
-  >
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-9">
     <li class="flex flex-col items-center">
       <a href="/listings/read?category=handbags" class="text-center">
         <span class="block mb-2 font-semibold">Handbags</span>
@@ -102,12 +100,12 @@
   </ul>
 </section>
 <section>
-  <h2 class="text-2xl mb-6 font-serif uppercase ml-5">View all listings</h2>
+  <h2 class="text-2xl mb-6 font-serif uppercase ml-5 mt-24">View all listings</h2>
   <div
     id="all-listings"
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
   ></div>
   <nav aria-label="pagination" class="flex justify-center">
-    <ul id="pagination-controls" class="flex list-none m-4"></ul>
+    <ul id="pagination-controls" class="flex justify-center mt-10 gap-3 list-none"></ul>
   </nav>
 </section>
