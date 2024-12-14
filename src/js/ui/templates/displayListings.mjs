@@ -16,17 +16,16 @@ export function displayListings(listings) {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
-      "flex",            
-      "justify-center",  
-      "items-center",    
-      "w-full",          
-      "h-52",           
-      "bg-gray-200",     
-      "rounded-md",      
-      "overflow-hidden", 
+      "flex",
+      "justify-center",
+      "items-center",
+      "w-full",
+      "h-52",
+      "bg-gray-200",
+      "rounded-md",
+      "overflow-hidden",
       "mb-4"
     );
-
 
     if (listing.media && listing.media.length > 0) {
       const firstMedia = listing.media[0];
@@ -35,6 +34,10 @@ export function displayListings(listings) {
       media.classList.add("w-full", "h-full", "object-cover");
       mediaContainer.appendChild(media);
     }
+
+    const imgClickableLink = document.createElement("a");
+    imgClickableLink.setAttribute("href", `/listing/read?id=${listing.id}`);
+    imgClickableLink.appendChild(mediaContainer);
 
     const sellerAndEndingContainer = document.createElement("div");
     sellerAndEndingContainer.classList.add(
@@ -46,7 +49,12 @@ export function displayListings(listings) {
 
     const seller = document.createElement("a");
     seller.setAttribute("href", `/profile/read?user=${listing.seller.name}`);
-    seller.classList.add("text-sm", "font-medium", "text-gray-700", "hover:font-bold");
+    seller.classList.add(
+      "text-sm",
+      "font-medium",
+      "text-gray-700",
+      "hover:font-bold"
+    );
     seller.innerText = `${listing.seller.name}`;
 
     const endingDate = document.createElement("p");
@@ -86,7 +94,7 @@ export function displayListings(listings) {
     bidAndButtonContainer.append(currentBid, bidButton);
 
     listingContainer.append(
-      mediaContainer,
+      imgClickableLink,
       sellerAndEndingContainer,
       bidAndButtonContainer
     );

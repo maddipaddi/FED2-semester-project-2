@@ -45,36 +45,39 @@ export async function displayWishlist() {
       media.classList.add("w-full", "h-full", "object-cover");
       mediaContainer.appendChild(media);
     }
+    const imgClickableLink = document.createElement("a");
+    imgClickableLink.setAttribute("href", `/listing/read?id=${listing.id}`);
+    imgClickableLink.appendChild(mediaContainer);
 
     const auctionEnd = document.createElement("p");
     auctionEnd.classList.add(
-      "bg-primary", 
-      "text-background", 
-      "font-medium", 
-      "py-2", 
-      "px-4", 
-      "rounded-t-md", 
-      "text-center", 
-      "mb-2" 
+      "bg-primary",
+      "text-background",
+      "font-medium",
+      "py-2",
+      "px-4",
+      "rounded-t-md",
+      "text-center",
+      "mb-2"
     );
     auctionEnd.innerText = `Ending: ${formatDateWithDayTimeDate(listing.endsAt)}`;
 
     const linkToReadListing = document.createElement("a");
     linkToReadListing.setAttribute("href", `/listing/read?id=${listing.id}`);
     linkToReadListing.classList.add(
-      "bg-accent", 
+      "bg-accent",
       "text-background",
-      "font-medium", 
-      "py-2", 
-      "px-4", 
-      "rounded-b-md", 
-      "block", 
-      "text-center", 
-      "hover:font-bold" 
+      "font-medium",
+      "py-2",
+      "px-4",
+      "rounded-b-md",
+      "block",
+      "text-center",
+      "hover:font-bold"
     );
     linkToReadListing.innerText = "Want to bid?";
 
-    listingElement.append(mediaContainer, auctionEnd, linkToReadListing);
+    listingElement.append(imgClickableLink, auctionEnd, linkToReadListing);
     listingsContainer.appendChild(listingElement);
   });
 }
