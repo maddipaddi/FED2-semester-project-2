@@ -9,7 +9,7 @@ export async function displayCarousel() {
 
   // Fetch the newest listings (limit 4)
   const data = await fetchListings({
-    sort: "created",
+    sort: "endsAt",
     sortOrder: "desc",
     limit: 4,
     _tag: "luxuryauctionhouse",
