@@ -6,6 +6,10 @@ import {
 } from "../../api/listing/read.mjs";
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function readAllListings(page = 1) {
   const options = {
@@ -17,11 +21,13 @@ export async function readAllListings(page = 1) {
     page: page,
   };
   try {
-    // Fetch listings based on the category
+    showSpinner();
     const { listings, meta } = await fetchListings(options);
     return { listings, meta };
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }
 
@@ -35,11 +41,13 @@ export async function readListingsByCategory() {
     _seller: true,
   };
   try {
-    // Fetch listings based on the category
+    showSpinner();
     const { listings, meta } = await fetchListings(options);
     return listings;
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }
 
@@ -49,10 +57,13 @@ export async function readListingsBySearch(searchQuery) {
     _seller: true,
   };
   try {
+    showSpinner();
     const listings = await fetchListingsBySearch(searchQuery, options);
     return listings;
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }
 
@@ -61,10 +72,13 @@ export async function readListingsByProfileActive(name) {
     _active: true,
   };
   try {
+    showSpinner();
     const listings = await fetchListingsByProfile(name, options);
     return listings;
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }
 
@@ -74,10 +88,13 @@ export async function readListingsByProfileInactive(name) {
     _active: false,
   };
   try {
+    showSpinner();
     const listings = await fetchListingsByProfile(name, options);
     return inactiveListings(listings);
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }
 
@@ -87,9 +104,12 @@ export async function readBidsByProfileActive(name) {
     _listings: true,
   };
   try {
+    showSpinner();
     const bids = await fetchBidsByProfile(name, options);
     return bids;
   } catch (error) {
     displayErrorMessage(error);
+  } finally {
+    hideSpinner();
   }
 }

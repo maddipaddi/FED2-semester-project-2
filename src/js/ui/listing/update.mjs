@@ -7,6 +7,10 @@ import {
   displayErrorMessage,
   displaySuccessMessage,
 } from "../components/displayMessageToUser/displayMessage.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function onUpdateListing(event) {
   event.preventDefault();
@@ -31,6 +35,7 @@ export async function onUpdateListing(event) {
   const id = findId();
 
   try {
+    showSpinner;
     await updateListing(id, listingData);
     displaySuccessMessage("Listing was updated.");
     setTimeout(function () {
@@ -41,5 +46,7 @@ export async function onUpdateListing(event) {
     setTimeout(function () {
       router.route(`/listing/update?id=${id}`);
     }, 2000);
+  } finally {
+    hideSpinner();
   }
 }

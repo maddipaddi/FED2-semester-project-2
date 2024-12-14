@@ -3,6 +3,10 @@ import {
   displaySuccessMessage,
   displayErrorMessage,
 } from "../components/displayMessageToUser/displayMessage.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function onLogin(event) {
   event.preventDefault();
@@ -11,12 +15,13 @@ export async function onLogin(event) {
   const account = Object.fromEntries(formData.entries());
 
   try {
-    // add a loading spinner?
+    showSpinner();
     await login(account);
     displaySuccessMessage("Login successful!");
   } catch (error) {
     displayErrorMessage(error);
   } finally {
+    hideSpinner();
     setTimeout(function () {
       location.reload();
     }, 3000);

@@ -5,6 +5,10 @@ import {
   displayErrorMessage,
   displaySuccessMessage,
 } from "../components/displayMessageToUser/displayMessage.mjs";
+import {
+  hideSpinner,
+  showSpinner,
+} from "../components/loadingSpinner/spinner.mjs";
 
 export async function onCreateListing(event) {
   event.preventDefault();
@@ -27,11 +31,13 @@ export async function onCreateListing(event) {
   };
 
   try {
+    showSpinner();
     await createListing(listingData);
     displaySuccessMessage("You have added a listing.");
   } catch (error) {
     displayErrorMessage(error);
   } finally {
+    hideSpinner();
     setTimeout(function () {
       location.reload();
     }, 3000);
