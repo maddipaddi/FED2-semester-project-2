@@ -1,16 +1,15 @@
 import { timeAgo } from "../../utilities/bidMadeTimeAgo.mjs";
 
-// Hjelpefunksjon for å lage et stylet bid-element
 function createBidElement(bid) {
   const bidElement = document.createElement("div");
   bidElement.classList.add(
-    "grid",           // Bruk grid for stabil layout
-    "grid-cols-3",    // Tre kolonner
-    "gap-4",          // Mellomrom mellom kolonnene
-    "py-2",           // Vertikal padding
-    "border-b",       // Skillelinje
+    "grid",           
+    "grid-cols-3",    
+    "gap-4",          
+    "py-2",           
+    "border-b",       
     "border-gray-200",
-    "last:border-b-0" // Fjern bunnlinjen for siste element
+    "last:border-b-0" 
   );
 
   const bidderName = document.createElement("span");
@@ -18,7 +17,7 @@ function createBidElement(bid) {
   bidderName.classList.add(
     "font-medium",
     "text-background",
-    "truncate" // Kutter tekst som er for lang
+    "truncate" 
   );
 
   const bidTime = document.createElement("span");
@@ -26,7 +25,7 @@ function createBidElement(bid) {
   bidTime.classList.add(
     "text-sm",
     "text-gray-300",
-    "text-center" // Sentrerer teksten horisontalt
+    "text-center" 
   );
 
   const bidAmount = document.createElement("span");
@@ -34,7 +33,7 @@ function createBidElement(bid) {
   bidAmount.classList.add(
     "font-bold",
     "text-background",
-    "text-right" // Høyrejusterer teksten
+    "text-right" 
   );
 
   bidElement.append(bidderName, bidTime, bidAmount);
@@ -44,17 +43,16 @@ function createBidElement(bid) {
 
 function renderAllBids(bids) {
   const bidContainer = document.getElementById("bid-list");
-  bidContainer.innerHTML = ""; // Clear existing bids
+  bidContainer.innerHTML = ""; 
 
   bids.forEach((bid) => {
-    const bidElement = createBidElement(bid); // Gjenbruk hjelpefunksjon
+    const bidElement = createBidElement(bid); 
     bidContainer.appendChild(bidElement);
   });
 
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "text-primary mt-2";
 
-  // Opprett "Collapse to Top 3"-knappen med samme styling
   const collapseButton = document.createElement("button");
   collapseButton.innerText = "Collapse to top 3";
   collapseButton.classList.add(
@@ -76,20 +74,18 @@ function renderAllBids(bids) {
   bidContainer.appendChild(buttonContainer);
 }
 
-
-// Funksjon for å vise top 3 bud
 export function renderBids(bids) {
   const sortedBids = bids.sort(
     (a, b) => new Date(b.created) - new Date(a.created)
   );
 
   const bidContainer = document.getElementById("bid-list");
-  bidContainer.innerHTML = ""; // Clear existing bids
+  bidContainer.innerHTML = ""; 
 
   const topBids = sortedBids.slice(0, 3);
 
   topBids.forEach((bid) => {
-    const bidElement = createBidElement(bid); // Bruk hjelpefunksjonen
+    const bidElement = createBidElement(bid); 
     bidContainer.appendChild(bidElement);
   });
 
@@ -97,7 +93,6 @@ export function renderBids(bids) {
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "text-primary mt-2";
   
-    // Opprett "See All Bids"-knappen
     const seeAllBidsButton = document.createElement("button");
     seeAllBidsButton.innerText = `See all bids (${sortedBids.length})`;
     seeAllBidsButton.classList.add(
