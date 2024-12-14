@@ -88,6 +88,17 @@ export function router() {
         initReadListings();
       },
     },
+    "/listings/search": {
+      template: "/templates/listings/search.html",
+      title: "Search results | " + pageTitle,
+      description: "Search listings at Auction House.",
+      init: async () => {
+        const { initSearchListings } = await import(
+          "../views/listings/search.mjs"
+        );
+        initSearchListings();
+      },
+    },
     "/my-activity-on-listings/bid-history": {
       template: "/templates/my-activity-on-listings/bid-history.html",
       title: "Bid history | " + pageTitle,

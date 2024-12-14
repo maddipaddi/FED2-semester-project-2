@@ -2,6 +2,7 @@ import {
   fetchBidsByProfile,
   fetchListings,
   fetchListingsByProfile,
+  fetchListingsBySearch,
 } from "../../api/listing/read.mjs";
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
@@ -42,6 +43,19 @@ export async function readListingsByCategory() {
   }
 }
 
+export async function readListingsBySearch(searchQuery) {
+  const options = {
+    _bids: true,
+    _seller: true,
+  };
+  try {
+    const listings = await fetchListingsBySearch(searchQuery, options);
+    return listings;
+  } catch (error) {
+    displayErrorMessage(error);
+  }
+}
+
 export async function readListingsByProfileActive(name) {
   const options = {
     _active: true,
@@ -57,6 +71,7 @@ export async function readListingsByProfileActive(name) {
 export async function readListingsByProfileInactive(name) {
   const options = {
     _bids: true,
+    _active: false,
   };
   try {
     const listings = await fetchListingsByProfile(name, options);
