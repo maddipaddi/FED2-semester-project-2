@@ -32,7 +32,6 @@ export function displayListings(listings) {
       mediaContainer.appendChild(media);
     }
 
-    // Container for seller name and ending date
     const sellerAndEndingContainer = document.createElement("div");
     sellerAndEndingContainer.classList.add(
       "flex",
@@ -52,7 +51,6 @@ export function displayListings(listings) {
 
     sellerAndEndingContainer.append(seller, endingDate);
 
-    // Container for current bid and bid button
     const bidAndButtonContainer = document.createElement("div");
     bidAndButtonContainer.classList.add(
       "flex",
