@@ -10,7 +10,7 @@ This project is the **frontend implementation** of Auction House, built on an ex
 
 ## Table of Contents
 
-1. [Features (Planned)](#features-planned)
+1. [Features](#features)
 2. [Target Audience](#target-audience)
 3. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
@@ -26,13 +26,20 @@ This project is the **frontend implementation** of Auction House, built on an ex
 
 ---
 
-## Features (Planned)
+## Features 
 
-- User registration and login for authenticated access.
-- Browse and search listings (available to all users).
-- Create listings for auction (authenticated users).
-- Place and view bids on listings.
-- Profile management, including avatar updates and credit balance.
+- Users can register using an email address ending in @stud.noroff.no.
+- A registered user can log in. On our platform, users are automatically logged in upon registration.
+- A registered user can log out.
+- As a registered user, you can update your profile banner, profile picture, and bio.
+- On your personal profile page, you can view your available credits.
+- A registered user can create a listing that includes: title, description, deadline date, category, and images.
+- As a registered user, you can place bids on other users' listings.
+- As a registered user, you can view bids on listings.
+- Visitors who are not registered can browse listings but cannot place bids or view profiles.
+- The Wishlist feature is a proof of concept. It is implemented using local storage since the API does not support this functionality or custom fields.
+- The "Listings Won" page currently appears empty. While we aimed to implement this feature to enhance the authenticity of the site, discussions with instructors clarified that this API seemes to be down at the moment. However, the page has been included for visual purposes.
+- Contact page, FAQ, About Us, Sustainability and Terms is just for visual purposes.
 
 ---
 
