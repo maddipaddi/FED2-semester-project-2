@@ -7,7 +7,6 @@ export async function displayCarousel() {
 
   let currentIndex = 0;
 
-  // Fetch the newest listings (limit 4)
   const data = await fetchListings({
     sort: "created",
     sortOrder: "desc",
@@ -18,7 +17,6 @@ export async function displayCarousel() {
 
   const listings = data.listings;
 
-  // Populate the carousel with listings
   listings.forEach((listing) => {
     const slide = document.createElement("div");
     slide.className = "w-full flex-shrink-0";
@@ -32,6 +30,8 @@ export async function displayCarousel() {
       "src",
       `${listing.media[0]?.url || "https://via.placeholder.com/800x400"}`
     );
+    const listingCategory = listing.tags[1];
+    listingImg.setAttribute("alt", `${listingCategory}`);
     listingImg.className = "w-full h-64 object-cover rounded-md shadow-lg";
 
     const listingTitle = document.createElement("h2");
@@ -44,12 +44,10 @@ export async function displayCarousel() {
     return slidesContainer;
   });
 
-  // Update carousel display
   const updateCarousel = () => {
     slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
   };
 
-  // Button Handlers
   const showNextSlide = () => {
     currentIndex = (currentIndex + 1) % listings.length;
     updateCarousel();
@@ -63,9 +61,7 @@ export async function displayCarousel() {
   prevButton.addEventListener("click", showPrevSlide);
   nextButton.addEventListener("click", showNextSlide);
 
-  // Auto-slide every 5 seconds
   setInterval(showNextSlide, 5000);
 
-  // Initialize carousel
   updateCarousel();
 }

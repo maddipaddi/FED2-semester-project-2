@@ -31,6 +31,8 @@ export function displayListings(listings) {
       const firstMedia = listing.media[0];
       const media = document.createElement("img");
       media.setAttribute("src", firstMedia.url);
+      const listingCategory = listing.tags[1];
+      media.setAttribute("alt", `${listingCategory}`);
       media.classList.add("w-full", "h-full", "object-cover");
       mediaContainer.appendChild(media);
     }
