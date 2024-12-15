@@ -1,6 +1,23 @@
 import { fetchSingleProfile } from "../../api/profile/read.mjs";
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
+/**
+ * Displays the logged-in user's profile information on the page.
+ *
+ * This function retrieves the currently logged-in user's profile data and populates
+ * various elements on the page with the user's information, including their banner,
+ * avatar, name, bio, and credits. If any required data is missing, appropriate fallback
+ * messages are displayed.
+ *
+ * @async
+ * @function
+ * @returns {Promise<void>} Resolves when the profile information has been displayed.
+ *
+ * @example
+ * await displayLoggedInProfileInfo();
+ * // The logged-in user's profile information is displayed on the page.
+ */
+
 export async function displayLoggedInProfileInfo() {
   const user = loggedInUser();
   const username = user.name;

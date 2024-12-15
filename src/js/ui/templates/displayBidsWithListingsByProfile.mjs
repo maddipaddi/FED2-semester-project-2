@@ -1,6 +1,30 @@
 import { displayMedia } from "../../utilities/displayFirstImageOnListing.mjs";
 import { formatDateWithDayTimeDate } from "../../utilities/formatDate.mjs";
 
+/**
+ * Displays bids along with their associated listings for a user's profile.
+ *
+ * This function processes a list of bids, associates each bid with its respective listing, 
+ * and calculates the user's highest bid amount for each listing. It returns an array of 
+ * processed bid data.
+ *
+ * @function
+ * @param {Array<Object>} bids - An array of bid objects.
+ * @param {Object} bids[].listing - The listing associated with a bid.
+ * @param {number} bids[].amount - The bid amount.
+ * @returns {Array<Object>} An array of processed bids, including listing details and the user's highest bid for each listing.
+ *
+ * @example
+ * const bids = [
+ *   { amount: 100, listing: { id: 1, title: "Item A" } },
+ *   { amount: 150, listing: { id: 1, title: "Item A" } },
+ *   { amount: 200, listing: { id: 2, title: "Item B" } },
+ * ];
+ * const processedBids = displayBidsWithListingsByProfile(bids);
+ * console.log(processedBids);
+ * // Output: Processed data including highest bids per listing.
+ */
+
 export function displayBidsWithListingsByProfile(bids) {
   return bids.map((bid) => {
     const listing = bid.listing;

@@ -11,6 +11,23 @@ import {
   showSpinner,
 } from "../components/loadingSpinner/spinner.mjs";
 
+/**
+ * Handles the creation of a new auction listing.
+ *
+ * This function processes the form submission event for creating a new auction listing.
+ * It extracts form data, organizes media and tags, and constructs a `listingData` object
+ * with the necessary fields for submitting the new listing.
+ *
+ * @async
+ * @function
+ * @param {Event} event - The form submission event.
+ * @returns {void} Does not return a value.
+ *
+ * @example
+ * document.getElementById("listingForm").addEventListener("submit", onCreateListing);
+ * // When the form is submitted, the onCreateListing function processes the data.
+ */
+
 export async function onCreateListing(event) {
   event.preventDefault();
   const form = event.target;

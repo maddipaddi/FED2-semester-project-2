@@ -8,6 +8,39 @@ import { initializeWishlistButton } from "../components/wishlist/wishlistBtn.mjs
 import { listingImages } from "../../utilities/displayAllImagesOnSingleListing.mjs";
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 
+/**
+ * Displays detailed information for a single auction listing.
+ *
+ * This function populates various elements on the page with data from a single listing object,
+ * including the title, description, images, current bid, seller details, and more. If the user
+ * is logged in, additional details such as the ability to bid, wishlist functionality, and seller
+ * statistics are displayed. If the user is not logged in, a message encouraging them to log in is shown.
+ *
+ * @async
+ * @function
+ * @param {Object} listing - The listing object containing details about the auction.
+ * @param {string} listing.title - The title of the listing.
+ * @param {string} listing.description - The description of the listing.
+ * @param {Array<Object>} listing.media - An array of media objects for the listing.
+ * @param {Array<Object>} listing.bids - An array of bids placed on the listing.
+ * @param {Object} listing.seller - The seller's details.
+ * @param {string} listing.seller.name - The seller's username.
+ * @param {string} listing.endsAt - The ending date and time of the auction.
+ * @returns {Promise<void>} Resolves when the listing details have been rendered on the page.
+ *
+ * @example
+ * const listing = {
+ *   title: "Vintage Watch",
+ *   description: "A classic vintage watch with a rich history.",
+ *   media: [{ url: "https://example.com/watch.jpg" }],
+ *   bids: [{ amount: 100 }, { amount: 150 }],
+ *   seller: { name: "john_doe" },
+ *   endsAt: "2024-12-31T23:59:59Z",
+ * };
+ * await displaySingleListing(listing);
+ * // The page is populated with the listing's details.
+ */
+
 export async function displaySingleListing(listing) {
   const title = document.getElementById("title");
   title.innerText = listing.title;

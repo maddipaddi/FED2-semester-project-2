@@ -2,6 +2,41 @@ import { displayMedia } from "../../utilities/displayFirstImageOnListing.mjs";
 import { formatDateWithDate } from "../../utilities/formatDate.mjs";
 import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 
+/**
+ * Generates and displays HTML elements for a list of auction listings.
+ *
+ * This function takes an array of auction listings and maps each listing to a dynamically
+ * generated HTML structure. Each listing includes media, seller information, ending date,
+ * the current highest bid, and a bid button. The function returns an array of HTML elements
+ * representing the listings.
+ *
+ * @function
+ * @param {Array<Object>} listings - An array of listing objects.
+ * @param {string} listings[].id - The unique identifier for the listing.
+ * @param {Array<Object>} listings[].media - An array of media objects associated with the listing.
+ * @param {string} listings[].media[].url - The URL of a media item.
+ * @param {Array<Object>} listings[].bids - An array of bids placed on the listing.
+ * @param {Object} listings[].seller - The seller information.
+ * @param {string} listings[].seller.name - The name of the seller.
+ * @param {string} listings[].endsAt - The ending date and time of the listing.
+ * @param {Array<string>} listings[].tags - Tags associated with the listing.
+ * @returns {Array<HTMLElement>} An array of `div` elements representing the listings.
+ *
+ * @example
+ * const listings = [
+ *   {
+ *     id: "123",
+ *     media: [{ url: "https://example.com/image.jpg" }],
+ *     bids: [{ amount: 100 }, { amount: 150 }],
+ *     seller: { name: "john_doe" },
+ *     endsAt: "2024-12-31T23:59:59Z",
+ *     tags: ["auction", "electronics"],
+ *   },
+ * ];
+ * const elements = displayListings(listings);
+ * elements.forEach((el) => document.body.appendChild(el));
+ */
+
 export function displayListings(listings) {
   return listings.map((listing) => {
     const listingContainer = document.createElement("div");
