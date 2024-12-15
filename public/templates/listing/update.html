@@ -22,12 +22,14 @@
       </button>
     </div>
   </div>
-  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 uppercase">
-    Edit listing
-  </h1>
+  <section>
+    <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 uppercase">
+      Edit listing
+    </h1>
+  </section>
   <div id="content" class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row gap-8">
-      <div class="bg-primary text-background p-6 rounded-md w-full md:w-3/4">
+      <section class="bg-primary text-background p-6 rounded-md w-full md:w-3/4">
         <form name="updateListing" class="space-y-4">
           <div>
             <label for="title" class="block text-sm font-medium mb-1">
@@ -98,6 +100,7 @@
                 name="category"
                 required
                 class="w-full px-3 py-2 border border-gray-300 rounded text-copy">
+                <option value="">Select a category</option>
                 <option value="handbag">Handbag</option>
                 <option value="bag">Bag</option>
                 <option value="watch">Watch</option>
@@ -126,9 +129,8 @@
             </button>
           </div>
         </form>
-      </div>
-
-      <div class="bg-accent text-background p-4 rounded-md w-full md:w-1/4">
+      </section>
+      <section class="bg-accent text-background p-4 rounded-md w-full md:w-1/4">
         <h2 class="text-lg font-serif mb-4 uppercase">
           Tips for creating a listing
         </h2>
@@ -137,7 +139,7 @@
           <li>Take measurements</li>
           <li>Write honest condition on the item</li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 </body>

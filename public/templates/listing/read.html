@@ -28,7 +28,7 @@
   </div>
   <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div id="main-content" class="md:col-span-2">
+      <section id="main-content" class="md:col-span-2">
         <h1
           id="title"
           class="text-2xl font-serif mb-2 flex justify-center uppercase"
@@ -49,9 +49,8 @@
             class="text-sm text-copy dark:text-background flex justify-center"
           ></p>
         </div>
-      </div>
-
-      <div class="flex flex-col gap-6 md:mt-20 md:col-span-1">
+      </section>
+      <section class="flex flex-col gap-6 md:mt-20 md:col-span-1">
         <div class="bg-primary text-white p-6 rounded-md" id="bids-sidebar">
           <h2 class="text-lg font-semibold mb-4 uppercase">Current bid</h2>
           <p id="current-bid" class="text-4xl font-bold mb-6"></p>
@@ -90,7 +89,6 @@
           </div>
           <div id="bid-list" class="bid-list text-sm"></div>
         </div>
-
         <div class="bg-secondary text-white p-6 rounded-md" id="seller-sidebar">
           <h2 class="text-lg font-semibold mb-4 uppercase">Seller</h2>
           <a id="seller-name-container"></a>
@@ -100,7 +98,7 @@
             All sellers are verified
           </p>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </body>
