@@ -1,11 +1,40 @@
-<div class="flex flex-col items-center justify-center py-9 space-y-6 md:space-y-0 md:flex-row md:space-x-6">
+<div
+  id="user-message-container"
+  role="alert"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+>
+  <div
+    class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+  >
+    <h2
+      aria-hidden="true"
+      id="message-title"
+      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+    ></h2>
+    <p
+      id="message-description"
+      class="text-center text-copy text-base leading-relaxed"
+    ></p>
+    <button
+      id="dismiss-btn"
+      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+    >
+      Dismiss
+    </button>
+  </div>
+</div>
+<div
+  class="flex flex-col items-center justify-center py-9 space-y-6 md:space-y-0 md:flex-row md:space-x-6"
+>
   <div class="flex space-x-6">
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
   </div>
-  <h1 class="uppercase font-serif font-bold text-center">Warning: fraud alert</h1>
+  <h1 class="uppercase font-serif font-bold text-center">
+    Warning: fraud alert
+  </h1>
   <div class="flex space-x-6">
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
     <div class="w-6 h-6 bg-primary rounded-full border border-white"></div>
@@ -14,29 +43,41 @@
   </div>
 </div>
 
-
 <div class="flex items-center justify-center">
-  <img src="/assets/fraud2.gif" alt="Illustration of a fake handbag" class="w-72 h-auto">
+  <img
+    src="/assets/fraud2.gif"
+    alt="Illustration of a fake handbag"
+    class="w-72 h-auto"
+  />
 </div>
 
 <div>
-  <h1 class="font-serif uppercase font-bold flex items-center justify-center">Oops! The Real Deal Isn't Here</h1>
+  <h1 class="font-serif uppercase font-bold flex items-center justify-center">
+    Oops! The Real Deal Isn't Here
+  </h1>
   <p class="flex items-center justify-center ml-3 mr-3">
-    As much as we dislike fake products, we also dislike pages that don't exist. 
+    As much as we dislike fake products, we also dislike pages that don't exist.
   </p>
   <p class="flex items-center justify-center ml-3 mr-3">
-    The page you tried to reach has either been moved or doesn't exist anymore. 
+    The page you tried to reach has either been moved or doesn't exist anymore.
   </p>
   <p class="flex items-center justify-center ml-3 mr-3">
     Here are some links to help guide you back to the site and to the real deal.
-    </p>
   </p>
 </div>
-<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 py-10">
-  <a class="bg-secondary text-background border border-black dark:border-background p-4 w-48 text-center" href="/">
+<div
+  class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 py-10"
+>
+  <a
+    class="bg-secondary text-background border border-black dark:border-background p-4 w-48 text-center"
+    href="/"
+  >
     Go to Homepage
   </a>
-  <a class="bg-secondary text-background border border-black dark:border-background p-4 w-48 text-center" href="/listings/read">
+  <a
+    class="bg-secondary text-background border border-black dark:border-background p-4 w-48 text-center"
+    href="/listings/read"
+  >
     Browse Listings
   </a>
 </div>

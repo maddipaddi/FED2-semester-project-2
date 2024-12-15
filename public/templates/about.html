@@ -1,44 +1,62 @@
 <div
   id="user-message-container"
-  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
-  <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
+  role="alert"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+>
+  <div
+    class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+  >
     <h2
+      aria-hidden="true"
       id="message-title"
-      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide">
-    </h2>
+      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+    ></h2>
     <p
       id="message-description"
-      class="text-center text-copy text-base leading-relaxed">
-    </p>
+      class="text-center text-copy text-base leading-relaxed"
+    ></p>
     <button
       id="dismiss-btn"
-      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold">
+      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+    >
       Dismiss
     </button>
   </div>
 </div>
 <section class="py-5">
   <h2 class="font-serif uppercase font-bold ml-3 mr-3">Our Values</h2>
-  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 ml-3 mr-3">
-    <li class="bg-accent text-background border border-black dark:border-background p-6">
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 ml-3 mr-3"
+  >
+    <li
+      class="bg-accent text-background border border-black dark:border-background p-6"
+    >
       <strong>Trust:</strong> We prioritize a secure platform where every
       transaction is safeguarded.
     </li>
-    <li class="bg-accent text-background border border-black dark:border-background p-6">
+    <li
+      class="bg-accent text-background border border-black dark:border-background p-6"
+    >
       <strong>Exclusivity:</strong> Only the finest luxury items are featured in
       our curated auctions.
     </li>
-    <li class="bg-accent text-background border border-black dark:border-background p-6">
+    <li
+      class="bg-accent text-background border border-black dark:border-background p-6"
+    >
       <strong>Innovation:</strong> Our modern platform ensures a smooth and
       intuitive user experience.
     </li>
-    <li class="bg-accent text-background border border-black dark:border-background p-6">
+    <li
+      class="bg-accent text-background border border-black dark:border-background p-6"
+    >
       <strong>Community:</strong> We connect buyers and sellers who share a
       passion for luxury and craftsmanship.
     </li>
   </ul>
 </section>
-<section class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 pt-9 sm:pt-2 lg:pt-2">
+<section
+  class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 pt-9 sm:pt-2 lg:pt-2"
+>
   <div>
     <h1 class="font-serif uppercase font-bold ml-3 mr-3">
       About Auction House
@@ -60,7 +78,9 @@
     </p>
   </div>
 </section>
-<section class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 py-9">
+<section
+  class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 py-9"
+>
   <div>
     <h2 class="font-serif uppercase font-bold ml-3 mr-3">Our Story</h2>
     <p class="ml-3 mr-3">
@@ -79,8 +99,9 @@
     </p>
     <a
       class="border-2 border-accent p-4 hover:font-bold text-sm uppercase ml-3 mr-3"
-      href="/account/register">
+      href="/account/register"
+    >
       Create Your Account
-      </a>
+    </a>
   </div>
 </section>
