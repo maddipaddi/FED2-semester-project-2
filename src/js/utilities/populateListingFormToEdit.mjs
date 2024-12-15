@@ -1,4 +1,5 @@
 import { fetchSingleListing } from "../api/listing/read.mjs";
+import { displayErrorMessage } from "../ui/components/displayMessageToUser/displayMessage.mjs";
 import { findId } from "./findId.mjs";
 
 export async function populateForm() {
@@ -12,7 +13,7 @@ export async function populateForm() {
     const imageInputs = document.querySelectorAll('input[name="images[]"]');
     listing.media.forEach((mediaItem, index) => {
       if (imageInputs[index]) {
-        imageInputs[index].value = mediaItem.url || ""; 
+        imageInputs[index].value = mediaItem.url || "";
       }
     });
 
@@ -20,12 +21,12 @@ export async function populateForm() {
     categorySelect.value =
       listing.tags.find((tag) =>
         ["handbag", "bag", "watch", "jewelry"].includes(tag)
-      ) || "handbag"; 
+      ) || "handbag";
 
     const auctionEndsInput = document.getElementById("auctionEnds");
     const auctionEndDate = new Date(listing.endsAt);
-    auctionEndsInput.value = auctionEndDate.toISOString().slice(0, 16); 
+    auctionEndsInput.value = auctionEndDate.toISOString().slice(0, 16);
   } catch (error) {
-    console.error("Failed to populate form:", error);
+    displayErrorMessage(error);
   }
 }

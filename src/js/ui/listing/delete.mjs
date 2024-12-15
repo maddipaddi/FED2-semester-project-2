@@ -1,4 +1,5 @@
 import { deletePost } from "../../api/listing/delete.mjs";
+import { displayDynamicConfirmationModal } from "../components/displayMessageToUser/confirmationModal.mjs";
 import {
   displayErrorMessage,
   displaySuccessMessage,
@@ -16,6 +17,13 @@ export async function onDeletePost(event) {
   const id = deleteButton.getAttribute("id");
 
   try {
+    const userConfirmed = await displayDynamicConfirmationModal(
+      "Are you sure you want to delete this listing?"
+    );
+    if (!userConfirmed) {
+      displaySuccessMessage("Deletion cancelled.");
+      return;
+    }
     showSpinner();
     await deletePost(id);
     displaySuccessMessage("Listing was deleted.");

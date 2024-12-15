@@ -3,6 +3,7 @@ import {
   fetchListings,
   fetchListingsByProfile,
   fetchListingsBySearch,
+  fetchListingsWonByProfile,
 } from "../../api/listing/read.mjs";
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
@@ -107,6 +108,22 @@ export async function readBidsByProfileActive(name) {
     showSpinner();
     const bids = await fetchBidsByProfile(name, options);
     return bids;
+  } catch (error) {
+    displayErrorMessage(error);
+  } finally {
+    hideSpinner();
+  }
+}
+
+export async function readWinsByProfile(name) {
+  const options = {
+    _bids: true,
+    _seller: true,
+  };
+  try {
+    showSpinner();
+    const listings = await fetchListingsWonByProfile(name, options);
+    return listings;
   } catch (error) {
     displayErrorMessage(error);
   } finally {

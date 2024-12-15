@@ -27,16 +27,29 @@ export async function displaySingleListing(listing) {
     const currentBid = document.getElementById("current-bid");
     currentBid.innerText = `${getHighestBid(listing.bids)}`;
 
-    const bidInput = document.getElementById("amount");
-    bidInput.setAttribute(
-      "placeholder",
-      `${getHighestBid(listing.bids)} or up`
-    );
+    if (loggedInUser().name === listing.seller.name) {
+      const bidAndWishlistBtnContainer = document.getElementById(
+        "bid-and-wishlist-btn-container"
+      );
+      bidAndWishlistBtnContainer.className = "hidden aria-hidden";
+    } else {
+      const bidInput = document.getElementById("amount");
+      bidInput.setAttribute(
+        "placeholder",
+        `${getHighestBid(listing.bids)} or up`
+      );
 
-    initializeWishlistButton(listing.id);
+      initializeWishlistButton(listing.id);
+    }
 
     const auctionEnd = document.getElementById("auctionEnd");
-    auctionEnd.innerText = `${formatDateWithDayTimeDate(listing.endsAt)}`;
+    if (new Date(listing.endsAt) > new Date()) {
+      let close = "Closes";
+      auctionEnd.innerText = `${close}: ${formatDateWithDayTimeDate(listing.endsAt)}`;
+    } else {
+      let close = "Closed";
+      auctionEnd.innerText = `${close}: ${formatDateWithDayTimeDate(listing.endsAt)}`;
+    }
 
     renderBids(listing.bids);
 

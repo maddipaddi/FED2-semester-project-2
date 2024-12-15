@@ -7,7 +7,6 @@ export async function initSearchListings() {
 export const fetchListingsBySearch = async (searchQuery, options = {}) => {
   const query = new URLSearchParams(options);
   const url = `${API_AUCTION_LISTINGS}/search?q=${searchQuery}${query.toString()}`;
-  console.log(url);
 
   const response = await authFetch(url);
   if (!response.ok) {

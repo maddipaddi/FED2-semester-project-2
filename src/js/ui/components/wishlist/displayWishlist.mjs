@@ -1,4 +1,5 @@
 import { fetchSingleListing } from "../../../api/listing/read.mjs";
+import { displayMedia } from "../../../utilities/displayFirstImageOnListing.mjs";
 import { formatDateWithDayTimeDate } from "../../../utilities/formatDate.mjs";
 import { getUserWishlist } from "./getUserWishlist.mjs";
 
@@ -28,23 +29,8 @@ export async function displayWishlist() {
       "mb-4"
     );
 
-    const mediaContainer = document.createElement("div");
-    mediaContainer.classList.add(
-      "w-full",
-      "h-52",
-      "bg-gray-200",
-      "rounded-md",
-      "overflow-hidden",
-      "mb-4"
-    );
+    const mediaContainer = displayMedia(listing);
 
-    if (listing.media && listing.media.length > 0) {
-      const firstMedia = listing.media[0];
-      const media = document.createElement("img");
-      media.setAttribute("src", firstMedia.url);
-      media.classList.add("w-full", "h-full", "object-cover");
-      mediaContainer.appendChild(media);
-    }
     const imgClickableLink = document.createElement("a");
     imgClickableLink.setAttribute("href", `/listing/read?id=${listing.id}`);
     imgClickableLink.appendChild(mediaContainer);

@@ -1,3 +1,4 @@
+import { displayMedia } from "../../utilities/displayFirstImageOnListing.mjs";
 import { formatDateWithDate } from "../../utilities/formatDate.mjs";
 import { getHighestBid } from "../../utilities/getHighestBid.mjs";
 
@@ -14,28 +15,7 @@ export function displayListings(listings) {
       "justify-between"
     );
 
-    const mediaContainer = document.createElement("div");
-    mediaContainer.classList.add(
-      "flex",
-      "justify-center",
-      "items-center",
-      "w-full",
-      "h-52",
-      "bg-gray-200",
-      "rounded-md",
-      "overflow-hidden",
-      "mb-4"
-    );
-
-    if (listing.media && listing.media.length > 0) {
-      const firstMedia = listing.media[0];
-      const media = document.createElement("img");
-      media.setAttribute("src", firstMedia.url);
-      const listingCategory = listing.tags[1];
-      media.setAttribute("alt", `${listingCategory}`);
-      media.classList.add("w-full", "h-full", "object-cover");
-      mediaContainer.appendChild(media);
-    }
+    const mediaContainer = displayMedia(listing);
 
     const imgClickableLink = document.createElement("a");
     imgClickableLink.setAttribute("href", `/listing/read?id=${listing.id}`);
@@ -61,8 +41,14 @@ export function displayListings(listings) {
 
     const endingDate = document.createElement("p");
     endingDate.classList.add("text-sm", "text-gray-500");
-    endingDate.innerText = `Ending: ${formatDateWithDate(listing.endsAt)}`;
 
+    if (new Date(listing.endsAt) > new Date()) {
+      let end = "Ending";
+      endingDate.innerText = `${end}: ${formatDateWithDate(listing.endsAt)}`;
+    } else {
+      let end = "Ended";
+      endingDate.innerText = `${end}: ${formatDateWithDate(listing.endsAt)}`;
+    }
     sellerAndEndingContainer.append(seller, endingDate);
 
     const bidAndButtonContainer = document.createElement("div");
