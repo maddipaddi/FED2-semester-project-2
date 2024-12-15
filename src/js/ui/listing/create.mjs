@@ -1,4 +1,5 @@
 import { createListing } from "../../api/listing/create.mjs";
+import { router } from "../../router/router.mjs";
 import { setMediaObjects } from "../../utilities/setImageUrlsAsObjects.mjs";
 import { setTagsWithCategory } from "../../utilities/setTagsWithCategory.mjs";
 import {
@@ -34,12 +35,12 @@ export async function onCreateListing(event) {
     showSpinner();
     await createListing(listingData);
     displaySuccessMessage("You have added a listing.");
+    setTimeout(function () {
+      router.route("/my-listings/active");
+    }, 2000);
   } catch (error) {
     displayErrorMessage(error);
   } finally {
     hideSpinner();
-    setTimeout(function () {
-      location.reload();
-    }, 3000);
   }
 }
