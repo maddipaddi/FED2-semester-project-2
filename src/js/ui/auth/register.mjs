@@ -1,6 +1,5 @@
 import { register } from "../../api/auth/register.mjs";
 import { login } from "../../api/auth/login.mjs";
-import { router } from "../../router/router.mjs";
 import {
   displayErrorMessage,
   displaySuccessMessage,
@@ -19,14 +18,15 @@ export async function onRegister(event) {
   try {
     showSpinner();
     await register(account);
+    await login({ email: account.email, password: account.password });
     displaySuccessMessage(
       "Registration successful, you will now be logged in!"
     );
-    await login({ email: account.email, password: account.password });
-    router.route("/");
   } catch (error) {
     hideSpinner();
     displayErrorMessage(error, "Profile already exists.");
+  } finally {
+    hideSpinner();
     setTimeout(function () {
       location.reload();
     }, 3000);
