@@ -1,11 +1,12 @@
 import { readAllListings } from "../listing/read.mjs";
 import { displayListings } from "../templates/displayListings.mjs";
 import { renderPagination } from "../renderers/renderPagination.mjs";
+import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
 
 let isRendering = false;
 
 export async function renderAllListings(page = 1) {
-  if (isRendering) return; 
+  if (isRendering) return;
   isRendering = true;
 
   try {
@@ -24,8 +25,8 @@ export async function renderAllListings(page = 1) {
 
     await renderPagination(meta);
   } catch (error) {
-    console.error("Error rendering listings:", error);
+    displayErrorMessage(error);
   } finally {
-    isRendering = false; 
+    isRendering = false;
   }
 }

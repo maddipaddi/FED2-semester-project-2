@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
 import { readListingsBySearch } from "../listing/read.mjs";
 
 import { displayListings } from "../templates/displayListings.mjs";
@@ -30,7 +31,7 @@ export async function renderSearchResults() {
       container.appendChild(card);
     });
   } catch (error) {
-    console.error("Error fetching search results:", error);
+    displayErrorMessage(error);
     const container = document.getElementById("container");
     container.innerHTML = `<p>Something went wrong while fetching search results. Please try again.</p>`;
   }
