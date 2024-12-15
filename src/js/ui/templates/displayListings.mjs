@@ -61,8 +61,14 @@ export function displayListings(listings) {
 
     const endingDate = document.createElement("p");
     endingDate.classList.add("text-sm", "text-gray-500");
-    endingDate.innerText = `Ending: ${formatDateWithDate(listing.endsAt)}`;
 
+    if (new Date(listing.endsAt) > new Date()) {
+      let end = "Ending";
+      endingDate.innerText = `${end}: ${formatDateWithDate(listing.endsAt)}`;
+    } else {
+      let end = "Ended";
+      endingDate.innerText = `${end}: ${formatDateWithDate(listing.endsAt)}`;
+    }
     sellerAndEndingContainer.append(seller, endingDate);
 
     const bidAndButtonContainer = document.createElement("div");
