@@ -19,14 +19,14 @@ export function displayMyActiveListings(listings) {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
-      "flex",            
-      "justify-center",  
-      "items-center",    
-      "w-full",          
-      "h-52",           
-      "bg-gray-200",     
-      "rounded-md",      
-      "overflow-hidden", 
+      "flex",
+      "justify-center",
+      "items-center",
+      "w-full",
+      "h-52",
+      "bg-gray-200",
+      "rounded-md",
+      "overflow-hidden",
       "mb-4"
     );
 
@@ -34,6 +34,8 @@ export function displayMyActiveListings(listings) {
       const firstMedia = listing.media[0];
       const media = document.createElement("img");
       media.setAttribute("src", firstMedia.url);
+      const listingCategory = listing.tags[1];
+      media.setAttribute("alt", `${listingCategory}`);
       media.classList.add("w-full", "h-full", "object-cover");
       mediaContainer.appendChild(media);
     }
@@ -43,30 +45,30 @@ export function displayMyActiveListings(listings) {
     const editButton = document.createElement("a");
     editButton.innerText = "Edit";
     editButton.classList.add(
-      "bg-accent", 
-      "text-background", 
-      "font-medium", 
-      "py-2", 
-      "px-4", 
-      "rounded-t-md", 
+      "bg-accent",
+      "text-background",
+      "font-medium",
+      "py-2",
+      "px-4",
+      "rounded-t-md",
       "text-center",
       "hover:font-bold",
-      "mb-2" 
+      "mb-2"
     );
     editButton.setAttribute("href", `/listing/update?id=${listing.id}`);
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
     deleteButton.classList.add(
-      "bg-secondary", 
+      "bg-secondary",
       "text-background",
-      "font-medium", 
-      "py-2", 
-      "px-4", 
-      "rounded-b-md", 
-      "block", 
-      "text-center", 
-      "hover:font-bold" 
+      "font-medium",
+      "py-2",
+      "px-4",
+      "rounded-b-md",
+      "block",
+      "text-center",
+      "hover:font-bold"
     );
     deleteButton.setAttribute("id", `${listing.id}`);
     deleteButton.addEventListener("click", onDeletePost);

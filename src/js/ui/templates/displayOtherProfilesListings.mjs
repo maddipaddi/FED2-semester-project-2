@@ -19,14 +19,14 @@ export const displayOtherProfilesListings = async (listings) => {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
-      "flex",            
-      "justify-center",  
-      "items-center",    
-      "w-full",          
-      "h-52",           
-      "bg-gray-200",     
-      "rounded-md",      
-      "overflow-hidden", 
+      "flex",
+      "justify-center",
+      "items-center",
+      "w-full",
+      "h-52",
+      "bg-gray-200",
+      "rounded-md",
+      "overflow-hidden",
       "mb-4"
     );
 
@@ -34,6 +34,7 @@ export const displayOtherProfilesListings = async (listings) => {
       const firstMedia = listing.media[0];
       const media = document.createElement("img");
       media.setAttribute("src", firstMedia.url);
+      media.setAttribute("alt", `${listing.media[0].alt}`);
       mediaContainer.appendChild(media);
     }
 
@@ -63,7 +64,7 @@ export const displayOtherProfilesListings = async (listings) => {
       "px-4",
       "rounded-b-md",
       "block",
-      "text-center",
+      "text-center"
     );
     const highestBid = getHighestBid(listing.bids);
     currentBid.innerText = `Current bid: ${highestBid}`;

@@ -20,14 +20,14 @@ export function displayMyInactiveListings(listings) {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add(
-      "flex",            
-      "justify-center",  
-      "items-center",    
-      "w-full",          
-      "h-52",           
-      "bg-gray-200",     
-      "rounded-md",      
-      "overflow-hidden", 
+      "flex",
+      "justify-center",
+      "items-center",
+      "w-full",
+      "h-52",
+      "bg-gray-200",
+      "rounded-md",
+      "overflow-hidden",
       "mb-4"
     );
 
@@ -35,6 +35,8 @@ export function displayMyInactiveListings(listings) {
       const firstMedia = listing.media[0];
       const media = document.createElement("img");
       media.setAttribute("src", firstMedia.url);
+      const listingCategory = listing.tags[1];
+      media.setAttribute("alt", `${listingCategory}`);
       mediaContainer.appendChild(media);
     }
 
