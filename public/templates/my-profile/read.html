@@ -40,16 +40,16 @@
       />
     </div>
 
-    <div class="flex-1 text-center mt-6 md:mt-12 md:text-left">
+    <section class="flex-1 text-center mt-6 md:mt-12 md:text-left">
       <h1 id="profilename" class="text-2xl font-bold uppercase font-serif">
         Username
       </h1>
       <p id="profile-bio" class="text-copy dark:text-background">
         Here is a bio about the user
       </p>
-    </div>
+    </section>
 
-    <div
+    <section
       class="flex flex-col space-y-4 mt-6 md:mt-12 md:flex-row md:space-x-4 md:space-y-0">
       <span
         id="profile-credits"
@@ -61,60 +61,61 @@
         class="bg-primary text-white px-4 py-1 rounded text-sm border dark:border-background text-center uppercase">
         Update profile
       </a>
-    </div>
+    </section>
   </div>
-  <div class="mt-9 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-    <div class="flex flex-col items-center sm:items-start">
-      <h2
-        class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
-        My listings
-      </h2>
-      <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
-        <li>
-          <a
-            href="/listing/create"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
-            Add new listing
-          </a>
-        </li>
-        <li>
-          <a
-            href="/my-listings/active"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
-            My active listings
-          </a>
-        </li>
-        <li>
-          <a
-            href="/my-listings/inactive"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
-            My previous listings
-          </a>
-        </li>
-      </ul>
+  <section>
+    <div class="mt-9 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div class="flex flex-col items-center sm:items-start">
+        <h2
+          class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
+          My listings
+        </h2>
+        <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
+          <li>
+            <a
+             href="/listing/create"
+              class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
+              Add new listing
+            </a>
+          </li>
+          <li>
+            <a
+              href="/my-listings/active"
+              class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
+              My active listings
+            </a>
+          </li>
+          <li>
+            <a
+              href="/my-listings/inactive"
+              class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
+              My previous listings
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col items-center sm:items-start">
+        <h2
+          class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
+          Activity on other listings
+        </h2>
+        <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
+          <li>
+            <a
+              href="/my-activity-on-listings/wishlist-and-active-bids"
+              class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
+              Wishlist & Active bids
+            </a>
+          </li>
+          <li>
+            <a
+              href="/my-activity-on-listings/bid-history"
+              class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
+              Listings won
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <div class="flex flex-col items-center sm:items-start">
-      <h2
-        class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
-        Activity on other listings
-      </h2>
-      <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
-        <li>
-          <a
-            href="/my-activity-on-listings/wishlist-and-active-bids"
-            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
-            Wishlist & Active bids
-          </a>
-        </li>
-        <li>
-          <a
-            href="/my-activity-on-listings/bid-history"
-            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
-            Listings won
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  </section>
 </div>
