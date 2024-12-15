@@ -1,17 +1,27 @@
-<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
+<body
+  class="bg-background text-copy font-sans min-h-screen flex items-center justify-center"
+>
   <div
     id="user-message-container"
-    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
-    <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
+    role="alert"
+    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+  >
+    <div
+      class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+    >
       <h2
+        aria-hidden="true"
         id="message-title"
-        class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"></h2>
+        class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+      ></h2>
       <p
         id="message-description"
-        class="text-center text-copy text-base leading-relaxed"></p>
+        class="text-center text-copy text-base leading-relaxed"
+      ></p>
       <button
         id="dismiss-btn"
-        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold">
+        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+      >
         Dismiss
       </button>
     </div>
@@ -36,7 +46,8 @@
               pattern="^[\w]+$"
               title="Please enter a username using only letters and numbers"
               placeholder="Create your username"
-              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"/>
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
           </div>
           <div>
             <label for="email" class="block text-sm font-medium mb-1">
@@ -50,7 +61,8 @@
               pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
               title="Please enter a valid noroff.no or stud.noroff.no address"
               placeholder="name@stud.noroff.no"
-              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"/>
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
           </div>
           <div>
             <label for="password" class="block text-sm font-medium mb-1">
@@ -63,12 +75,14 @@
               required
               minlength="8"
               placeholder="Create a strong password"
-              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"/>
+              class="w-full px-3 py-2 border border-gray-300 rounded text-gray-800"
+            />
           </div>
           <div class="pt-4">
             <button
               type="submit"
-              class="w-full bg-white text-accent py-2 px-4 rounded hover:font-bold uppercase">
+              class="w-full bg-white text-accent py-2 px-4 rounded hover:font-bold uppercase"
+            >
               Sign up
             </button>
           </div>

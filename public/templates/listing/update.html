@@ -1,24 +1,34 @@
-<body class="bg-background text-copy font-sans min-h-screen flex items-center justify-center">
+<body
+  class="bg-background text-copy font-sans min-h-screen flex items-center justify-center"
+>
   <div
     id="user-message-container"
-    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
-    <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
+    role="alert"
+    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
+  >
+    <div
+      class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
+    >
       <h2
+        aria-hidden="true"
         id="message-title"
-        class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide">
-      </h2>
+        class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
+      ></h2>
       <p
         id="message-description"
-        class="text-center text-copy text-base leading-relaxed">
-      </p>
+        class="text-center text-copy text-base leading-relaxed"
+      ></p>
       <button
         id="dismiss-btn"
-        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold">
+        class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
+      >
         Dismiss
       </button>
     </div>
   </div>
-  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 uppercase">Edit listing</h1>
+  <h1 class="text-sm md:text-4xl font-serif mb-6 ml-5 uppercase">
+    Edit listing
+  </h1>
   <div id="content" class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row gap-8">
       <div class="bg-primary text-background p-6 rounded-md w-full md:w-3/4">
@@ -34,7 +44,8 @@
               required
               aria-required="true"
               placeholder="Enter the title of the item"
-              class="w-full px-3 py-2 border border-gray-300 rounded text-copy"/>
+              class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+            />
           </div>
           <div>
             <label for="description" class="block text-sm font-medium mb-1">
@@ -48,7 +59,8 @@
               aria-required="true"
               rows="4"
               placeholder="Provide a description of the item"
-              class="w-full px-3 py-2 border border-gray-300 rounded text-copy resize">
+              class="w-full px-3 py-2 border border-gray-300 rounded text-copy resize"
+            >
             </textarea>
           </div>
           <div>
@@ -61,21 +73,24 @@
                 aria-label="Enter the URL for the first image"
                 required
                 maxlength="300"
-                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"/>
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
               <input
                 type="url"
                 name="images[]"
                 placeholder="Enter URL for second image"
                 aria-label="Enter the URL for the second image"
                 maxlength="300"
-                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"/>
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
               <input
                 type="url"
                 name="images[]"
                 placeholder="Enter URL for third image"
                 aria-label="Enter the URL for the third image"
                 maxlength="300"
-                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"/>
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4">
@@ -87,7 +102,8 @@
                 id="category"
                 name="category"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded text-copy">
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              >
                 <option value="handbag">Handbag</option>
                 <option value="bag">Bag</option>
                 <option value="watch">Watch</option>
@@ -104,13 +120,15 @@
                 name="auctionEnds"
                 required
                 aria-required="true"
-                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"/>
+                class="w-full px-3 py-2 border border-gray-300 rounded text-copy"
+              />
             </div>
           </div>
           <div>
             <button
               type="submit"
-              class="w-full bg-background text-copy py-2 px-4 rounded hover:font-bold">
+              class="w-full bg-background text-copy py-2 px-4 rounded hover:font-bold"
+            >
               Update Listing
             </button>
           </div>
@@ -118,7 +136,9 @@
       </div>
 
       <div class="bg-accent text-background p-4 rounded-md w-full md:w-1/4">
-        <h2 class="text-lg font-serif mb-4 uppercase">Tips for creating a listing</h2>
+        <h2 class="text-lg font-serif mb-4 uppercase">
+          Tips for creating a listing
+        </h2>
         <ul class="space-y-2 text-sm">
           <li>Take good quality pictures</li>
           <li>Take measurements</li>

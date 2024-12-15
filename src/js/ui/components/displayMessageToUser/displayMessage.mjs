@@ -10,6 +10,9 @@ export function displaySuccessMessage(successMsg) {
 
   successText.innerText = successMsg;
   successTitle.innerText = "Success";
+  if (successTitle.innerText) {
+    successTitle.removeAttribute("aria-hidden");
+  }
   successTitle.classList.add("text-accent");
   dismissBtn.classList.add("bg-accent");
   messageContainer.classList.remove("hidden");
@@ -24,7 +27,6 @@ export function displayErrorMessage(responseError = {}, customMessage = "") {
 
   if (!messageContainer) return;
 
-  // Define default messages for specific status codes
   const statusMessages = {
     400: "Bad Request: Please check your input and try again.",
     401: "Unauthorized: Please log in to continue.",
@@ -33,17 +35,18 @@ export function displayErrorMessage(responseError = {}, customMessage = "") {
     500: "Internal Server Error: Something went wrong on our side.",
     503: "Service Unavailable: Please try again later.",
     default:
-      "Something went wrong. Please try again, or contact support if error persists.", // Fallback message
+      "Something went wrong. Please try again, or contact support if error persists.",
   };
 
-  // Extract status code and choose message
   const { status } = responseError;
   const message =
     customMessage || statusMessages[status] || statusMessages.default;
 
-  // Display the message in the container
   errorText.innerText = message;
   errorTitle.innerText = "Error";
+  if (errorTitle.innerText) {
+    errorTitle.removeAttribute("aria-hidden");
+  }
   errorTitle.classList.add("text-secondary");
   dismissBtn.classList.add("bg-secondary");
   messageContainer.classList.remove("hidden");
