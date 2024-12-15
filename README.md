@@ -38,7 +38,8 @@ This project is the **frontend implementation** of Auction House, built on an ex
 - As a registered user, you can view bids on listings.
 - Visitors who are not registered can browse listings but cannot place bids or view profiles.
 - The Wishlist feature is a proof of concept. It is implemented using local storage since the API does not support this functionality or custom fields.
-- The "Listings Won" page currently appears empty. While we aimed to implement this feature to enhance the authenticity of the site, discussions with instructors clarified that this was not feasible due to API limitations. However, the page has been included for visual purposes.
+- The "Listings Won" page currently appears empty. While we aimed to implement this feature to enhance the authenticity of the site, discussions with instructors clarified that this API seemes to be down at the moment. However, the page has been included for visual purposes.
+- Contact page, FAQ, About Us, Sustainability and Terms is just for visual purposes.
 
 ---
 
