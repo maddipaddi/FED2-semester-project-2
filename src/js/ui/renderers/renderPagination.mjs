@@ -10,7 +10,6 @@ export async function renderPagination(meta) {
 
   paginationControls.innerHTML = "";
 
-  // Add "Previous" button
   const prevLi = document.createElement("li");
   const prevLink = document.createElement("a");
   prevLink.href = "";
@@ -28,7 +27,6 @@ export async function renderPagination(meta) {
   prevLi.appendChild(prevLink);
   paginationControls.appendChild(prevLi);
 
-  // Add page links
   for (let i = 1; i <= meta.pageCount; i++) {
     const pageLi = document.createElement("li");
     const pageLink = document.createElement("a");
@@ -68,7 +66,6 @@ export async function renderPagination(meta) {
     paginationControls.appendChild(pageLi);
   }
 
-  // Add "Next" button
   const nextLi = document.createElement("li");
   const nextLink = document.createElement("a");
   nextLink.href = "";

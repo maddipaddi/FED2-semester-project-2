@@ -1,7 +1,6 @@
 export const formatDateWithDayTimeDate = (dateString) => {
   const date = new Date(dateString);
 
-  // Get the day of the week
   const daysOfWeek = [
     "Sunday",
     "Monday",
