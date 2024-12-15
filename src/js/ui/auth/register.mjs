@@ -8,6 +8,7 @@ import {
   hideSpinner,
   showSpinner,
 } from "../components/loadingSpinner/spinner.mjs";
+import { router } from "../../router/router.mjs";
 
 export async function onRegister(event) {
   event.preventDefault();
@@ -22,13 +23,17 @@ export async function onRegister(event) {
     displaySuccessMessage(
       "Registration successful, you will now be logged in!"
     );
+    setTimeout(function () {
+      router.route("/");
+      location.reload();
+    }, 2000);
   } catch (error) {
     hideSpinner();
     displayErrorMessage(error, "Profile already exists.");
+    setTimeout(function () {
+      router.route("/account/register");
+    }, 3000);
   } finally {
     hideSpinner();
-    setTimeout(function () {
-      location.reload();
-    }, 3000);
   }
 }
