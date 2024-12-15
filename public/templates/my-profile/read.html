@@ -1,24 +1,21 @@
 <div
   id="user-message-container"
   role="alert"
-  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30"
->
+  class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-30">
   <div
-    class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100"
-  >
+    class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 transform transition-all duration-300 scale-90 hover:scale-100">
     <h2
       aria-hidden="true"
       id="message-title"
-      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide"
-    ></h2>
+      class="font-serif font-extrabold uppercase text-center mb-4 text-lg tracking-wide">
+    </h2>
     <p
       id="message-description"
-      class="text-center text-copy text-base leading-relaxed"
-    ></p>
+      class="text-center text-copy text-base leading-relaxed">
+    </p>
     <button
       id="dismiss-btn"
-      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold"
-    >
+      class="mt-4 w-full text-white py-2 px-4 rounded hover:font-bold">
       Dismiss
     </button>
   </div>
@@ -33,8 +30,7 @@
     />
   </div>
   <div
-    class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6"
-  >
+    class="relative -mt-12 px-6 flex flex-col items-center md:flex-row md:items-center md:space-x-6">
     <div class="w-24 h-24 rounded-full border-4 border-white overflow-hidden">
       <img
         id="profile-img"
@@ -54,18 +50,15 @@
     </div>
 
     <div
-      class="flex flex-col space-y-4 mt-6 md:mt-12 md:flex-row md:space-x-4 md:space-y-0"
-    >
+      class="flex flex-col space-y-4 mt-6 md:mt-12 md:flex-row md:space-x-4 md:space-y-0">
       <span
         id="profile-credits"
-        class="bg-accent text-white px-3 py-1 rounded text-sm border dark:border-background text-center uppercase"
-      >
+        class="bg-accent text-white px-3 py-1 rounded text-sm border dark:border-background text-center uppercase">
         Balance: $753
       </span>
       <a
         href="/my-profile/update"
-        class="bg-primary text-white px-4 py-1 rounded text-sm border dark:border-background text-center uppercase"
-      >
+        class="bg-primary text-white px-4 py-1 rounded text-sm border dark:border-background text-center uppercase">
         Update profile
       </a>
     </div>
@@ -73,32 +66,28 @@
   <div class="mt-9 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
     <div class="flex flex-col items-center sm:items-start">
       <h2
-        class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
-      >
+        class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
         My listings
       </h2>
       <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
         <li>
           <a
             href="/listing/create"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-          >
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
             Add new listing
           </a>
         </li>
         <li>
           <a
             href="/my-listings/active"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-          >
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
             My active listings
           </a>
         </li>
         <li>
           <a
             href="/my-listings/inactive"
-            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-          >
+            class="block bg-accent text-white px-4 py-2 rounded text-center border dark:border-background w-64">
             My previous listings
           </a>
         </li>
@@ -107,24 +96,21 @@
 
     <div class="flex flex-col items-center sm:items-start">
       <h2
-        class="text-lg font-serif uppercase font-semibold text-center sm:text-left"
-      >
+        class="text-lg font-serif uppercase font-semibold text-center sm:text-left">
         Activity on other listings
       </h2>
       <ul class="space-y-2 mt-2 flex flex-col items-center justify-center">
         <li>
           <a
             href="/my-activity-on-listings/wishlist-and-active-bids"
-            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-          >
+            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
             Wishlist & Active bids
           </a>
         </li>
         <li>
           <a
             href="/my-activity-on-listings/bid-history"
-            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64"
-          >
+            class="block bg-primary text-white px-4 py-2 rounded text-center border dark:border-background w-64">
             Listings won
           </a>
         </li>

@@ -5,17 +5,15 @@ import { renderPagination } from "../renderers/renderPagination.mjs";
 let isRendering = false;
 
 export async function renderAllListings(page = 1) {
-  if (isRendering) return; // Prevent duplicate invocations
+  if (isRendering) return; 
   isRendering = true;
 
   try {
     const { listings, meta } = await readAllListings(page);
 
-    // Clear previous listings, but preserve container classes
     const container = document.getElementById("all-listings");
     container.innerHTML = "";
 
-    // Render listings
     const listingElements = displayListings(listings);
     listingElements.forEach((listingElement) => {
       const card = document.createElement("div");
@@ -24,11 +22,10 @@ export async function renderAllListings(page = 1) {
       container.appendChild(card);
     });
 
-    // Render pagination
     await renderPagination(meta);
   } catch (error) {
     console.error("Error rendering listings:", error);
   } finally {
-    isRendering = false; // Reset rendering state
+    isRendering = false; 
   }
 }

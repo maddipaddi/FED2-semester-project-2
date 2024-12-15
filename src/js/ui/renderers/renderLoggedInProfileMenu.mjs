@@ -3,11 +3,9 @@ import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
 export function renderLoggedInProfileMenu() {
   const profileMenu = document.getElementById("profile-menu");
   const user = loggedInUser();
-  // Clear existing menu content
   profileMenu.innerHTML = "";
 
   if (user) {
-    // Logged-in view
     const profileText = document.createElement("p");
     profileText.classList.add(
       "text-sm",
@@ -72,7 +70,6 @@ export function renderLoggedInProfileMenu() {
     profileMenu.appendChild(logoutText);
     profileMenu.appendChild(logoutButton);
   } else {
-    // Logged-out view
     profileMenu.innerHTML = `
     <div class="mb-6 mt-12">
             <h2 class="mb-2 text-md font-semibold font-serif">

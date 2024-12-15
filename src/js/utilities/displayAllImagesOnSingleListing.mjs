@@ -3,7 +3,6 @@ export const listingImages = (listing) => {
     const mediaContainerMain = document.getElementById("media-container-main");
     const mediaContainer = document.getElementById("media-container");
 
-    // Hovedbilde (øverst, sentrert)
     const mainImageWrapper = document.createElement("div");
     mainImageWrapper.className = "flex justify-center mb-4";
 
@@ -14,7 +13,6 @@ export const listingImages = (listing) => {
     mainImageWrapper.appendChild(mediaMain);
     mediaContainerMain.appendChild(mainImageWrapper);
 
-    // Sekundære bilder (samlet horisontalt på store skjermer)
     const secondaryImageWrapper = document.createElement("div");
     secondaryImageWrapper.className =
       "flex flex-wrap md:flex-nowrap gap-2 md:gap-4 w-full justify-center";
