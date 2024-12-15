@@ -12,10 +12,8 @@ export async function renderSearchResults() {
   }
   try {
     const listings = await readListingsBySearch(searchQuery);
-    console.log(listings);
-
     const container = document.getElementById("container");
-    container.innerHTML = ""; 
+    container.innerHTML = "";
 
     if (listings.length === 0) {
       container.innerHTML = `<p>No results found for "${searchQuery}".</p>`;
