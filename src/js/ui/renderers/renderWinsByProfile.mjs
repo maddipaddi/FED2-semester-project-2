@@ -1,10 +1,10 @@
-import { fetchListingsWonByProfile } from "../../api/listing/read.mjs";
 import { loggedInUser } from "../../utilities/findLoggedInUser.mjs";
+import { readWinsByProfile } from "../listing/read.mjs";
 import { displayWinsByProfile } from "../templates/displayWinsByProfile.mjs";
 
 export async function renderWinsByProfile() {
   const user = loggedInUser();
-  const wins = await fetchListingsWonByProfile(user.name);
+  const wins = await readWinsByProfile(user.name);
 
   const listingElements = displayWinsByProfile(wins);
 

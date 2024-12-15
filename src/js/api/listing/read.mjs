@@ -73,8 +73,9 @@ export const fetchBidsByProfile = async (name, options = {}) => {
   return bids;
 };
 
-export const fetchListingsWonByProfile = async (name) => {
-  const url = `${API_AUCTION_PROFILES}/${name}/wins`;
+export const fetchListingsWonByProfile = async (name, options = {}) => {
+  const query = new URLSearchParams(options);
+  const url = `${API_AUCTION_PROFILES}/${name}/wins?${query.toString()}`;
 
   const response = await authFetch(url);
   if (!response.ok) {
