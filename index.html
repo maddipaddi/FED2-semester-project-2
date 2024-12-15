@@ -7,34 +7,24 @@
     <title></title>
     <meta name="description" content="" />
     <script type="module" src="/src/main.mjs"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/86cb2f60ed.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">      
+    <link rel="preload" href="https://kit.fontawesome.com/86cb2f60ed.js" as="script">
+    <script src="https://kit.fontawesome.com/86cb2f60ed.js" crossorigin="anonymous" defer></script>      
   </head>
   <body
-    class="bg-background text-copy dark:bg-copy dark:text-background min-h-screen flex flex-col"
-  >
+    class="bg-background text-copy dark:bg-copy dark:text-background min-h-screen flex flex-col">
     <header>
       <nav class="container mx-auto flex items-center justify-between py-4">
         <div class="flex items-center space-x-4">
           <button
             id="open-menu-left"
             aria-label="Open menu"
-            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer"
-          >
+            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer">
             <i class="fa-solid fa-bars size-4 sm:size-5"></i>
           </button>
 
@@ -42,30 +32,25 @@
             <button
               id="search-icon"
               aria-label="Open search bar"
-              class="text-copy dark:text-background"
-            >
+              class="text-copy dark:text-background">
               <i class="fa-solid fa-magnifying-glass size-4 sm:size-5"></i>
             </button>
 
             <div
               id="search-bar-container"
-              class="absolute left-0 top-full mt-2 hidden pt-3 z-10"
-            >
+              class="absolute left-0 top-full mt-2 hidden pt-3 z-10">
               <div
-                class="flex items-center border border-copy bg-background rounded dark:bg-copy dark:border-background"
-              >
+                class="flex items-center border border-copy bg-background rounded dark:bg-copy dark:border-background">
                 <input
                   aria-label="search-input"
                   id="search-input"
                   type="text"
                   placeholder="Search..."
-                  class="px-4 py-2 bg-transparent text-copy dark:text-background focus:outline-none md:w-72 sm:w-44 w-28"
-                />
+                  class="px-4 py-2 bg-transparent text-copy dark:text-background focus:outline-none md:w-72 sm:w-44 w-28"/>
                 <button
                   id="close-search"
                   aria-label="close-search"
-                  class="px-4 text-copy dark:text-background"
-                >
+                  class="px-4 text-copy dark:text-background">
                   <i class="fa-solid fa-times"></i>
                 </button>
               </div>
@@ -79,8 +64,7 @@
               id="logo"
               src="/assets/AH-logo-light.png"
               alt="Auction House logo"
-              class="h-10 sm:h-12 md:h-14"
-            />
+              class="h-10 sm:h-12 md:h-14 max-h-14 w-auto"/>
           </a>
         </div>
 
@@ -88,16 +72,14 @@
           <a
             aria-label="Wishlist"
             href="/my-activity-on-listings/wishlist-and-active-bids"
-            class="text-copy dark:text-background"
-          >
+            class="text-copy dark:text-background">
             <i class="fa-regular fa-heart size-4 sm:size-5"></i>
           </a>
 
           <button
             id="open-menu-right"
             aria-label="Open profile menu"
-            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer"
-          >
+            class="bg-background text-copy dark:bg-copy dark:text-background px-4 py-2 cursor-pointer">
             <i class="fa-regular fa-user size-4 sm:size-5"></i>
           </button>
         </div>
@@ -106,28 +88,24 @@
 
     <div
       id="menu-left"
-      class="fixed top-0 left-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform -translate-x-full transition-transform duration-300 z-40 shadow-md"
-    >
+      class="fixed top-0 left-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform -translate-x-full transition-transform duration-300 z-40 shadow-md">
       <div class="p-4">
         <h5 class="mb-4 text-lg font-bold font-serif uppercase">Categories</h5>
         <button
           aria-label="Close menu"
           id="close-menu-left"
-          class="absolute top-2 right-2 bg-transparent border-none cursor-pointer text-lg"
-        >
+          class="absolute top-2 right-2 bg-transparent border-none cursor-pointer text-lg">
           <i class="fa-solid fa-x"></i>
         </button>
         <ul
-          class="mb-4 mt-8 text-lg text-copy dark:text-background font-sans space-y-2"
-        >
+          class="mb-4 mt-8 text-lg text-copy dark:text-background font-sans space-y-2">
           <li><a href="/listings/read?category=handbags">Handbags</a></li>
           <li><a href="/listings/read?category=bags">Bags</a></li>
           <li><a href="/listings/read?category=jewelry">Jewelry</a></li>
           <li><a href="/listings/read?category=watches">Watches</a></li>
         </ul>
         <ul
-          class="mb-4 mt-16 text-base text-copy dark:text-background font-sans space-y-2"
-        >
+          class="mb-4 mt-16 text-base text-copy dark:text-background font-sans space-y-2">
           <li><a href="/sustainability">Sustainability</a></li>
           <li><a href="/terms">Terms</a></li>
         </ul>
@@ -135,8 +113,7 @@
         <p class="mt-8 font-sans text-copy dark:text-background">Appearance</p>
         <button
           id="theme-toggle"
-          class="bg-accent text-background dark:bg-accent dark:text-background font-medium py-2 px-4 rounded w-full border border-transparent dark:border-white hover:font-bold"
-        >
+          class="bg-accent text-background dark:bg-accent dark:text-background font-medium py-2 px-4 rounded w-full border border-transparent dark:border-white hover:font-bold">
           Dark mode/light mode
         </button>
       </div>
@@ -144,8 +121,7 @@
 
     <div
       id="menu-right"
-      class="fixed top-0 right-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform translate-x-full transition-transform duration-300 z-40 shadow-md"
-    >
+      class="fixed top-0 right-0 h-screen w-80 bg-background text-copy dark:bg-copy dark:text-background overflow-y-auto transform translate-x-full transition-transform duration-300 z-40 shadow-md">
       <div class="p-4">
         <button
           aria-label="Close profile menu"
@@ -161,19 +137,17 @@
     <main class="flex-grow relative">
       <div
         id="loading-spinner"
-        class="hidden fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center z-50"
-      >
+        class="hidden fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center z-50">
         <div
-          class="w-12 h-12 bg-primary transform rotate-45 animate-pulse"
-        ></div>
+          class="w-12 h-12 bg-primary transform rotate-45 animate-pulse">
+        </div>
       </div>
       <div id="app" class="container mx-auto py-8 mt-9"></div>
     </main>
 
     <footer>
       <div
-        class="bg-primary text-white font-sans h-24 flex justify-evenly w-full flex-wrap gap-4 items-center"
-      >
+        class="bg-primary text-white font-sans h-24 flex justify-evenly w-full flex-wrap gap-4 items-center">
         <a href="/about">About Auction House</a>
         <a href="/contact">Contact</a>
         <a href="/FAQ">FAQ</a>
