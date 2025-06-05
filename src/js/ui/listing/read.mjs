@@ -6,10 +6,18 @@ import {
 } from "../../api/listing/read.mjs";
 import { inactiveListings } from "../../utilities/filterInactiveListings.mjs";
 import { displayErrorMessage } from "../components/displayMessageToUser/displayMessage.mjs";
-import {
-  hideSpinner,
-  showSpinner,
-} from "../components/loadingSpinner/spinner.mjs";
+import { hideSpinner, showSpinner } from "../components/loadingSpinner/spinner.mjs";
+
+async function withSpinner(asyncFn) {
+  try {
+    showSpinner();
+    return await asyncFn();
+  } catch (error) {
+    displayErrorMessage(error);
+  } finally {
+    hideSpinner();
+  }
+}
 
 export async function readAllListings(page = 1) {
   const options = {
@@ -18,17 +26,12 @@ export async function readAllListings(page = 1) {
     _seller: true,
     _tag: "luxuryauctionhouse",
     limit: 12,
-    page: page,
+    page,
   };
-  try {
-    showSpinner();
+  return await withSpinner(async () => {
     const { listings, meta } = await fetchListings(options);
     return { listings, meta };
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  });
 }
 
 export async function readListingsByCategory() {
@@ -40,15 +43,10 @@ export async function readListingsByCategory() {
     _bids: true,
     _seller: true,
   };
-  try {
-    showSpinner();
-    const { listings, meta } = await fetchListings(options);
+  return await withSpinner(async () => {
+    const { listings } = await fetchListings(options);
     return listings;
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  });
 }
 
 export async function readListingsBySearch(searchQuery) {
@@ -56,30 +54,12 @@ export async function readListingsBySearch(searchQuery) {
     _bids: true,
     _seller: true,
   };
-  try {
-    showSpinner();
-    const listings = await fetchListingsBySearch(searchQuery, options);
-    return listings;
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  return await withSpinner(() => fetchListingsBySearch(searchQuery, options));
 }
 
 export async function readListingsByProfileActive(name) {
-  const options = {
-    _active: true,
-  };
-  try {
-    showSpinner();
-    const listings = await fetchListingsByProfile(name, options);
-    return listings;
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  const options = { _active: true };
+  return await withSpinner(() => fetchListingsByProfile(name, options));
 }
 
 export async function readListingsByProfileInactive(name) {
@@ -87,15 +67,10 @@ export async function readListingsByProfileInactive(name) {
     _bids: true,
     _active: false,
   };
-  try {
-    showSpinner();
+  return await withSpinner(async () => {
     const listings = await fetchListingsByProfile(name, options);
     return inactiveListings(listings);
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  });
 }
 
 export async function readBidsByProfileActive(name) {
@@ -103,13 +78,5 @@ export async function readBidsByProfileActive(name) {
     _active: true,
     _listings: true,
   };
-  try {
-    showSpinner();
-    const bids = await fetchBidsByProfile(name, options);
-    return bids;
-  } catch (error) {
-    displayErrorMessage(error);
-  } finally {
-    hideSpinner();
-  }
+  return await withSpinner(() => fetchBidsByProfile(name, options));
 }
